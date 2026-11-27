@@ -1,5 +1,5 @@
-// Offline support. Bump VERSION on every change so phones pick up the new version.
-const VERSION = "v2";
+﻿// Offline support. Bump VERSION on every change so phones pick up the new version.
+const VERSION = "v3";
 const CACHE = "vienna-" + VERSION;
 const CORE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
 const CDN = [

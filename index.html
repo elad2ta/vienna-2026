@@ -139,7 +139,7 @@ section.panel h2{font-family:var(--display);font-weight:700;font-size:1.7rem;lin
 .progress i{display:block;height:100%;background:var(--pine);width:0;transition:width .3s}
 .note{font-size:.85rem;color:var(--muted);margin-top:16px}
 nav.tabs{position:fixed;bottom:0;left:0;right:0;z-index:6;background:var(--bar);border-top:3px solid var(--gold);display:flex;justify-content:center;padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
-nav.tabs .inner{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;width:100%;max-width:640px}
+nav.tabs .inner{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;width:100%;max-width:640px}
 nav.tabs button{border:0;background:transparent;color:var(--bar-ink);opacity:.8;font-family:var(--body);font-weight:600;font-size:.78rem;padding:8px 1px;border-radius:10px;cursor:pointer}
 nav.tabs button[aria-selected="true"]{color:#14231b;background:var(--gold);opacity:1}
 nav.tabs button.sostab{color:#ffb3bd;opacity:1}
@@ -197,6 +197,30 @@ details.sec .count{font-size:.8rem;font-weight:600;color:var(--muted);margin-inl
 .answer:empty{display:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 body.no-sample #askGo,body.no-sample #askStop{display:none}
+.photobar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.photobar select{font:inherit;border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--surface);color:var(--ink)}
+label.primary{display:inline-block}
+.chip.on{background:var(--gold);border-color:var(--gold);color:#14231b}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:6px}
+.pgrid button{padding:0;border:0;background:var(--line);aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:pointer}
+.pgrid img{width:100%;height:100%;object-fit:cover;display:block}
+.lightbox{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.92);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px}
+.lightbox img{max-height:80vh;max-width:100%;object-fit:contain;border-radius:8px}
+.lbbar{display:flex;gap:8px;margin-top:12px;align-items:center;color:#fff;flex-wrap:wrap;justify-content:center}
+.lbbar .copy{background:#fff;color:#000}
+#lbDel{background:#e00000;color:#fff;border-color:#e00000}
+nav.tabs .inner::-webkit-scrollbar{display:none}
+nav.tabs button{flex:1 0 auto;padding:8px 6px;position:relative}
+nav.tabs button.hasNew::after{content:"";position:absolute;top:3px;left:3px;width:9px;height:9px;border-radius:50%;background:#ff3b4e;box-shadow:0 0 0 2px var(--bar)}
+.chatlist{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.msg{max-width:80%;padding:6px 10px;border-radius:14px;background:var(--surface);border:1px solid var(--line);align-self:flex-end}
+.msg.me{align-self:flex-start;background:var(--flame-soft);border-color:var(--gold)}
+.msg .who{font-size:.78rem;font-weight:700;color:var(--pine)}
+.msg .txt{white-space:pre-wrap;overflow-wrap:anywhere}
+.msg .tm{font-size:.7rem;color:var(--muted);text-align:left;font-variant-numeric:tabular-nums}
+.daysep{align-self:center;font-size:.75rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:1px 10px;margin-top:6px}
+.chatform{position:sticky;bottom:calc(62px + env(safe-area-inset-bottom,0px));display:flex;gap:6px;align-items:flex-end;background:var(--bg);padding:8px 0;z-index:2}
+.chatform textarea{flex:1;font:inherit;border:1px solid var(--line);border-radius:12px;padding:8px;background:var(--surface);color:var(--ink);resize:none;max-height:120px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}#snow{display:none}}
 </style>
 </head>
@@ -244,6 +268,18 @@ body.no-sample #askGo,body.no-sample #askStop{display:none}
       <div id="sos"></div>
     </section>
 
+    <section class="panel" id="panel-photo" hidden>
+      <h2>תמונות מהטיול</h2>
+      <p class="lead">כל המשפחה מעלה תמונות לאלבום המשותף. התמונות נשמרות באיכות מלאה, גם אחרי הטיול.</p>
+      <div class="card"><h3>האלבום המשותף</h3><p>פותחים, ומוסיפים תמונות בכפתור ההוספה שבאלבום.</p><a class="primary" style="display:inline-block;text-decoration:none;margin-top:8px" href="https://photos.app.goo.gl/r6KUkVwqgfh6FhDt6" target="_blank" rel="noopener">פתח את האלבום</a></div>
+    </section>
+
+    <section class="panel" id="panel-chat" hidden>
+      <h2>צ׳אט משפחתי</h2>
+      <p class="lead">ההודעות בקבוצת הווטסאפ של המשפחה, עם התראות לטלפון.</p>
+      <div class="card"><h3>קבוצת הווטסאפ</h3><p>בווינה צריך אינטרנט: eSIM או נקודה חמה.</p><a class="primary" style="display:inline-block;text-decoration:none;margin-top:8px" href="https://chat.whatsapp.com/COywLU09MQo7SyMrSJdhJF" target="_blank" rel="noopener">פתח בווטסאפ</a></div>
+    </section>
+
     <section class="panel" id="panel-info" hidden>
       <h2>פרטים חשובים</h2>
       <div id="info"></div>
@@ -262,6 +298,7 @@ body.no-sample #askGo,body.no-sample #askStop{display:none}
   <div class="answer" id="askOut" aria-live="polite"></div>
 </div>
 
+
 <nav class="tabs" aria-label="חלקי האפליקציה" dir="rtl">
   <div class="inner" role="tablist">
     <button data-panel="day" aria-selected="true">ימים</button>
@@ -269,6 +306,8 @@ body.no-sample #askGo,body.no-sample #askStop{display:none}
     <button data-panel="move">תחבורה</button>
     <button data-panel="todo">משימות</button>
     <button data-panel="info">פרטים</button>
+    <button data-panel="photo">תמונות</button>
+    <button data-panel="chat">צ׳אט</button>
     <button data-panel="net">אינטרנט</button>
     <button data-panel="sos" class="sostab">חירום</button>
   </div>
@@ -291,6 +330,7 @@ const DAYS = [
     slots:[
       {t:"בוקר", h:"ארוחת בוקר ב־Café Prückel", p:"בית קפה וינאי קלאסי, קרוב למלון.", maps:[["Café Prückel","Café Prückel Wien"]]},
       {t:"צהריים", h:"Naschmarkt ושוק הפשפשים", q:"אילו מסעדות ודוכני אוכל מומלצים ב־Naschmarkt לארוחת צהריים בשבת עם הבנות? מה כדאי לטעום שם, ומה כדאי לחפש בשוק הפשפשים?", p:"בשבת יש לצידו שוק פשפשים. אפשר לאכול שם או ב־NENI.", maps:[["Naschmarkt","Naschmarkt Wien"]]},
+      {t:"15:00", h:"אפשרות: מחזמר היפה והחיה", p:"של דיסני, בגרמנית, בתיאטרון Raimund, לא רחוק מ־Naschmarkt. כרטיסים מ־€65, כדאי להזמין מראש. ההצגה נמשכת כ־2.5 שעות, עד בערך 17:30. אם הולכים, מוותרים על שוק חג המולד בקרלספלאץ (Art Advent), ובערב ממשיכים ישר לשוק חג המולד בבלוודר. הצגות נוספות: שישי 4.12 ב־19:30 וראשון 6.12 ב־14:00.", maps:[["Raimund Theater","Raimund Theater Wien"]]},
       {t:"אחה״צ", h:"Art Advent בקרלספלאץ", p:"שוק של אמנים ומלאכת יד.", maps:[["קרלספלאץ","Art Advent Karlsplatz Wien"]]},
       {t:"שקיעה", h:"השוק מול ארמון בלוודר", p:"מגיעים בחשמלית D.", maps:[["בלוודר","Weihnachtsmarkt Schloss Belvedere"]]},
       {t:"ערב", h:"נר שני", p:"הערב הוא גם ליל הקרמפוס. האירועים קורים בעיקר מחוץ למרכז.", key:true}
@@ -303,8 +343,16 @@ const DAYS = [
       {t:"ערב", h:"הפראטר: הגלגל הענק ושוק החורף", p:"Riesenrad בחושך, ושוק החורף ב־Riesenradplatz עם כמה מתקנים פתוחים, לפי מזג האוויר. הכניסה לשוק בחינם, והוא פתוח עד 22:00. מגיעים ב־U1 ל־Praterstern.", maps:[["Riesenradplatz","Riesenradplatz Wien"]]},
       {t:"ערב", h:"נר שלישי", p:"", key:true}
     ]},
-  { date:"2026-12-07", dow:"שני", label:"7.12", title:"טיול יום מחוץ לעיר", candles:4, tags:["צריך לבחור"],
-    slots:[], options:[
+  { date:"2026-12-07", dow:"שני", label:"7.12", title:"טיול יום לואכאו", candles:4, tags:["עמק הדנובה"],
+    slots:[
+      {t:"בוקר", h:"רכבת לקרמס", p:"מ־Franz-Josefs-Bahnhof, כשעה נסיעה.", maps:[["Franz-Josefs-Bahnhof","Franz-Josefs-Bahnhof Wien"]]},
+      {t:"לפנה״צ", h:"קרמס", p:"העיר העתיקה וקפה.", maps:[["קרמס","Krems an der Donau Altstadt"]]},
+      {t:"צהריים", h:"דירנשטיין", p:"אוטובוס 715 מקרמס, פעם בשעה. הכפר, מגדל הכנסייה הכחול־לבן והריסות הטירה מעל הנהר.", maps:[["דירנשטיין","Dürnstein Wachau"]]},
+      {t:"אחה״צ", h:"מנזר מלק, אם מספיקים", p:"ממשיכים באוטובוס 715 למלק. ביום שני נכנסים רק עם סיור מודרך, ב־11:00, ב־13:30 או ב־15:00. ממלק חוזרים ישר לווינה ברכבת, כשעה.", maps:[["מלק","Stift Melk"]]},
+      {t:"שימו לב", h:"ביום שני העמק שקט", p:"הספינות והרכבת ההיסטורית לא פועלות, ושוק חג המולד בדירנשטיין כנראה סגור."},
+      {t:"חלופה", h:"סמרינג: יום בשלג", p:"במקום ואכאו: רכבת מהתחנה המרכזית, כשעה ורבע, במסילת ההרים ההיסטורית. רכבל, הליכה בשלג ומזחלות, אם יש מספיק שלג. כדאי לבדוק כמה ימים לפני אם אתר הסקי נפתח.", maps:[["התחנה המרכזית","Wien Hauptbahnhof"],["סמרינג","Zauberberg Semmering"]]},
+      {t:"ערב", h:"חזרה לווינה ונר רביעי", p:"ארוחת ערב קרוב למלון.", key:true}
+    ], optionsOld:[
       {h:"ואכאו (Wachau)", p:"רכבת מ־Franz-Josefs-Bahnhof לקרמס, כשעה נסיעה. משם לדירנשטיין ולמנזר מלק לאורך הדנובה. בחורף הספינות לא פועלות.", maps:[["Franz-Josefs-Bahnhof","Franz-Josefs-Bahnhof Wien"],["דירנשטיין","Dürnstein"],["מלק","Stift Melk"]]},
       {h:"סמרינג (Semmering)", p:"מסילת ההרים, אתר מורשת עולמי של אונסק״ו, מהתחנה המרכזית, כשעה וחצי נסיעה. יש סיכוי טוב לשלג ולנופי הרים.", maps:[["התחנה המרכזית","Wien Hauptbahnhof"],["סמרינג","Semmering Bahnhof"]]}
     ], after:{t:"ערב", h:"חזרה לוינה ונר רביעי", p:"ארוחת ערב קרוב למלון.", key:true}},
@@ -357,10 +405,11 @@ const TODO_GROUPS = [
   {id:"before", title:"לפני הטיול", items:[
     ["esim","לקנות כרטיס eSIM לגלישה ולהתקין אותו בארץ, לפני הטיסה"],
     ["insure","לעשות ביטוח נסיעות לארבעתכם (רפואי וכבודה)"],
-    ["daytrip","לבחור טיול יום (ואכאו או סמרינג) ולקנות כרטיסי ÖBB"],
+    ["daytrip","לקנות כרטיסי רכבת לקרמס ל־7.12 (ÖBB) ולבדוק שעות סיורים במלק"],
     ["apps","להתקין את האפליקציות (הרשימה בלשונית פרטים), כולל מפות ותרגום לשימוש בלי אינטרנט"],
     ["menorah","לארוז חנוכייה ונרות לשישה ערבים"],
     ["winter","לארוז בגדי חורף. מחממי ידיים נטענים רק בתיק היד"],
+    ["musical","אם הולכים להיפה והחיה: להזמין כרטיסים מראש ב־Musical Vienna"],
     ["note","פתק בכיס לכל בת: שם המלון ומספר הווטסאפ של ההורים"],
     ["roaming","למנוע חיובי נדידה בסימים הישראליים (ההנחיות בלשונית אינטרנט)"]
   ]},
@@ -781,6 +830,8 @@ function applyRemote(d){
     }, () => { setSyncNote(false); });
   } catch (e) { /* stay local-only */ }
 })();
+
+
 </script>
 <script>
 if ("serviceWorker" in navigator) {
