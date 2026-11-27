@@ -23,6 +23,10 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 const phMsg = t => { $("#phMsg").textContent = t || ""; };
 const chMsg = t => { $("#chMsg").textContent = t || ""; };
 
+// Keep in step with VERSION in sw.js.
+const APP_VERSION = "10";
+$("#panel-info").insertAdjacentHTML("beforeend", '<p class="note" style="text-align:center">גרסת האפליקציה: ' + APP_VERSION + '</p>');
+
 $("#panel-photo .lead").textContent = "כל המשפחה רואה את התמונות כאן, וכל אחד יכול להוסיף ולמחוק. לוחצים על תמונה כדי להגדיל, לשמור או למחוק.";
 $("#panel-chat .lead").textContent = "הודעות בין כל בני המשפחה. כשמגיעה הודעה חדשה מופיעה נקודה אדומה על הלשונית.";
 

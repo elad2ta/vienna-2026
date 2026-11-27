@@ -842,23 +842,29 @@ function applyRemote(d){
 </script>
 <script type="module" src="family.js"></script>
 <script>
+// Updates: phones usually resume the app instead of reloading it, so check for a new version
+// every time the app comes back to the screen, and reload into it as soon as it takes over.
 if ("serviceWorker" in navigator) {
-  addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").then(reg => {
-      reg.addEventListener("updatefound", () => {
-        const w = reg.installing;
-        w && w.addEventListener("statechange", () => {
-          if (w.state === "installed" && navigator.serviceWorker.controller) {
-            const b = document.createElement("button");
-            b.className = "primary"; b.textContent = "יש עדכון לאפליקציה. לחצו לרענון";
-            b.style.cssText = "position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;transform:translateX(-50%);z-index:40";
-            b.onclick = () => location.reload();
-            document.body.appendChild(b);
-          }
-        });
-      });
-    }).catch(() => {});
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloading = false;
+  const busy = () => { const a = document.activeElement; return !!(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.value); };
+  const reloadNow = () => { if (!reloading) { reloading = true; location.reload(); } };
+  const offerReload = () => {
+    if (document.getElementById("updBtn")) return;
+    const b = document.createElement("button");
+    b.id = "updBtn"; b.className = "primary"; b.textContent = "יש עדכון לאפליקציה. לחצו לרענון";
+    b.style.cssText = "position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;transform:translateX(-50%);z-index:70";
+    b.onclick = reloadNow;
+    document.body.appendChild(b);
+  };
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadController) return;            // very first install: nothing old to replace
+    if (document.hidden || !busy()) reloadNow(); else offerReload();
   });
+  const checkUpdate = () => navigator.serviceWorker.getRegistration().then(r => r && r.update()).catch(() => {});
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) checkUpdate(); });
+  addEventListener("pageshow", e => { if (e.persisted) checkUpdate(); });
+  addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
 }
 </script>
 </body>
