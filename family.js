@@ -24,7 +24,7 @@ const phMsg = t => { $("#phMsg").textContent = t || ""; };
 const chMsg = t => { $("#chMsg").textContent = t || ""; };
 
 // Keep in step with VERSION in sw.js.
-const APP_VERSION = "10";
+const APP_VERSION = "11";
 $("#panel-info").insertAdjacentHTML("beforeend", '<p class="note" style="text-align:center">גרסת האפליקציה: ' + APP_VERSION + '</p>');
 
 $("#panel-photo .lead").textContent = "כל המשפחה רואה את התמונות כאן, וכל אחד יכול להוסיף ולמחוק. לוחצים על תמונה כדי להגדיל, לשמור או למחוק.";
@@ -123,10 +123,19 @@ $("#lbClose").onclick = closeLb;
 $("#lb").addEventListener("click", e => { if (e.target.id === "lb") closeLb(); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#lb").hidden) closeLb(); });
 $("#lbDel").onclick = async () => {
-  if (!delArm) { delArm = true; $("#lbDel").textContent = "למחוק? לחצו שוב"; return; }
-  const p = lbCur; closeLb();
-  try { const b = writeBatch(db); b.delete(doc(db, "photos", p.id)); b.delete(doc(db, "photoFull", p.id)); await b.commit(); phMsg("התמונה נמחקה."); }
-  catch (e) { phMsg("לא הצלחתי למחוק את התמונה."); }
+  const p = lbCur; if (!p || !db) return;
+  // One tap + a clear yes/no question (the old "tap again" step was easy to miss).
+  if (!confirm("למחוק את התמונה? היא תימחק אצל כל המשפחה.")) return;
+  closeLb();
+  photos = photos.filter(x => x.id !== p.id); renderPhotos();   // disappears right away
+  phMsg("מוחק...");
+  try {
+    const b = writeBatch(db); b.delete(doc(db, "photos", p.id)); b.delete(doc(db, "photoFull", p.id)); await b.commit();
+    phMsg("התמונה נמחקה.");
+  } catch (e) {
+    phMsg("לא הצלחתי למחוק את התמונה. בדקו את החיבור לאינטרנט ונסו שוב.");
+    alert("המחיקה לא הצליחה (" + (e && e.code || "שגיאה") + "). בדקו את החיבור לאינטרנט ונסו שוב.");
+  }
 };
 async function toJpeg(file, maxSide, quality){
   let bmp; try { bmp = await createImageBitmap(file, {imageOrientation:"from-image"}); } catch (e) { bmp = await createImageBitmap(file); }
@@ -198,7 +207,7 @@ $("#chatform").onsubmit = async e => {
 };
 
 /* ---------- shared hotspot QR (same for the whole family) ---------- */
-const hsNote = () => [...document.querySelectorAll("#netPanel .note")].find(n => n.textContent.includes("שם הרשת"));
+const hsNote = () => [...document.querySelectorAll("#netPanel .note")].find(n => n.textContent.includes("שם הרשת") || n.textContent.includes("QR"));
 function hotspotLocked(){
   const n = hsNote(); if (n) n.textContent = "כדי לראות את קוד ה־QR של המשפחה, נכנסים פעם אחת בלשונית צ׳אט עם השם והקוד המשפחתי.";
 }
