@@ -1,5 +1,5 @@
 ﻿// Offline support. Bump VERSION on every change so phones pick up the new version.
-const VERSION = "v6";
+const VERSION = "v7";
 const CACHE = "vienna-" + VERSION;
 const CORE = ["./", "index.html", "family.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
 // Only these outside hosts are cached; everything else (Firebase data and sign-in) always goes to the network.

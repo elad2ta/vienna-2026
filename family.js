@@ -173,8 +173,34 @@ $("#chatform").onsubmit = async e => {
   finally { $("#chatSend").disabled = false; }
 };
 
+/* ---------- shared hotspot QR (same for the whole family) ---------- */
+const hsNote = () => [...document.querySelectorAll("#netPanel .note")].find(n => n.textContent.includes("שם הרשת"));
+function hotspotLocked(){
+  const n = hsNote(); if (n) n.textContent = "כדי לראות את קוד ה־QR של המשפחה, נכנסים פעם אחת בלשונית צ׳אט עם השם והקוד המשפחתי.";
+}
+let hsOpened = false;
+function watchHotspot(){
+  const n = hsNote(); if (n) n.textContent = "שם הרשת והסיסמה משותפים לכל המשפחה: מה שנשמר כאן מופיע אצל כולם. מציגים את הקוד, ובטלפון השני סורקים אותו במצלמה.";
+  const btn = $("#hsMake");
+  if (btn) btn.onclick = async () => {
+    const v = { ssid: $("#hsSsid").value.trim(), pass: $("#hsPass").value };
+    try { localStorage.setItem("vienna-hotspot", JSON.stringify(v)); } catch (e) {}
+    drawQr(v.ssid, v.pass);
+    try { await setDoc(doc(db, "shared", "hotspot"), v); } catch (e) {}
+  };
+  onSnapshot(doc(db, "shared", "hotspot"), snap => {
+    if (!snap.exists()) return;
+    const v = snap.data(), s = $("#hsSsid"), p = $("#hsPass");
+    try { localStorage.setItem("vienna-hotspot", JSON.stringify({ ssid: v.ssid || "", pass: v.pass || "" })); } catch (e) {}
+    if (s && p && document.activeElement !== s && document.activeElement !== p) { s.value = v.ssid || ""; p.value = v.pass || ""; }
+    drawQr(v.ssid, v.pass);
+    if (!hsOpened && v.ssid) { hsOpened = true; const d = document.querySelector('details.sec[data-sec="qr"]'); if (d) d.open = true; }
+  }, () => {});
+}
+
 /* ---------- start ---------- */
 function start(){
+  watchHotspot();
   $("#phUp").hidden = false; $("#chatform").hidden = false; phMsg(""); chMsg("");
   $("#chatlist").innerHTML = '<p class="lead">טוען הודעות...</p>';
   onSnapshot(collection(db, "members"), snap => { snap.docs.forEach(d => { names[d.id] = d.data().name || ""; }); renderChat(); renderPhotos(); }, () => {});
@@ -185,6 +211,30 @@ function start(){
     chat = snap.docs.map(d => Object.assign({ id: d.id }, d.data())).filter(m => m.text).reverse(); renderChat();
   }, () => chMsg("לא הצלחתי לטעון את ההודעות."));
 }
+
+/* ---------- stay in the same place after a refresh ---------- */
+const POS_KEY = "vienna-pos";
+function savePos(){
+  const open = document.querySelector("section.panel:not([hidden])");
+  const pos = { panel: open ? open.id.replace("panel-", "") : "day", day: current, y: Math.round(window.scrollY), t: Date.now() };
+  try { localStorage.setItem(POS_KEY, JSON.stringify(pos)); } catch (e) {}
+}
+let posTimer = null;
+addEventListener("scroll", () => { clearTimeout(posTimer); posTimer = setTimeout(savePos, 300); }, { passive: true });
+document.addEventListener("click", () => setTimeout(savePos, 50));
+addEventListener("pagehide", savePos);
+document.addEventListener("visibilitychange", () => { if (document.hidden) savePos(); });
+(function restorePos(){
+  let pos = null; try { pos = JSON.parse(localStorage.getItem(POS_KEY)); } catch (e) {}
+  // Only right after a refresh or update (within 30 minutes); otherwise the app opens on today as usual.
+  if (!pos || !(Date.now() - pos.t < 30 * 60 * 1000)) return;
+  if (Number.isInteger(pos.day) && pos.day >= 0 && pos.day < DAYS.length && pos.day !== current) { current = pos.day; renderDays(); renderDay(); }
+  if (pos.panel && document.getElementById("panel-" + pos.panel)) showPanel(pos.panel);
+  const y = pos.y || 0; let moved = false;
+  ["touchstart", "wheel", "keydown"].forEach(ev => addEventListener(ev, () => { moved = true; }, { once: true, passive: true }));
+  // Content (photos, messages) arrives a moment later, so try a few times until the page is tall enough.
+  [0, 300, 900, 2000].forEach(ms => setTimeout(() => { if (!moved && Math.abs(window.scrollY - y) > 4) window.scrollTo(0, y); }, ms));
+})();
 
 renderPhotos();
 if (!FIREBASE_CONFIG.apiKey) {
@@ -200,7 +250,7 @@ if (!FIREBASE_CONFIG.apiKey) {
     uid = user.uid;
     try {
       const me = await getDoc(doc(db, "members", uid));
-      if (me.exists()) start(); else showJoin();
+      if (me.exists()) start(); else { showJoin(); hotspotLocked(); }
     } catch (e) { lockUI("לא הצלחתי להתחבר. בדקו את החיבור לאינטרנט."); }
   });
 }
