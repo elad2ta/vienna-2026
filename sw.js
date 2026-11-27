@@ -1,5 +1,5 @@
 ﻿// Offline support. Bump VERSION on every change so phones pick up the new version.
-const VERSION = "v5";
+const VERSION = "v6";
 const CACHE = "vienna-" + VERSION;
 const CORE = ["./", "index.html", "family.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
 // Only these outside hosts are cached; everything else (Firebase data and sign-in) always goes to the network.
@@ -11,8 +11,11 @@ const CDN = [
 ];
 
 self.addEventListener("install", e => {
+  // Take over right away, so a new version replaces the old code the next time the app opens
+  // (without this, an app left open in the background kept running the previous version).
+  self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(async c => {
-    await c.addAll(CORE);
+    await c.addAll(CORE.map(u => new Request(u, { cache: "reload" })));
     await Promise.all(CDN.map(u => fetch(u, { mode: "no-cors" }).then(r => c.put(u, r)).catch(() => {})));
   }));
 });
