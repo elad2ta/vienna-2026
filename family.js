@@ -18,20 +18,13 @@ const FIREBASE_CONFIG = {
   appId: "1:943221920820:web:90f672b6f8bbf14e422661"
 };
 
-// Optional extras next to the in-app features.
-const ALBUM_URL = "https://photos.app.goo.gl/r6KUkVwqgfh6FhDt6";
-const WHATSAPP_URL = "https://chat.whatsapp.com/COywLU09MQo7SyMrSJdhJF";
-
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const phMsg = t => { $("#phMsg").textContent = t || ""; };
 const chMsg = t => { $("#chMsg").textContent = t || ""; };
 
-// Small extra links under each panel's lead.
-$("#panel-photo .lead").textContent = "כל המשפחה רואה את התמונות כאן, וכל אחד יכול להוסיף.";
-$("#panel-photo .lead").insertAdjacentHTML("afterend", '<p class="note" style="margin-top:0">תמונות באיכות מלאה: <a href="' + ALBUM_URL + '" target="_blank" rel="noopener">האלבום המשותף בגוגל תמונות</a></p>');
-$("#panel-chat .lead").textContent = "הודעות בין כל בני המשפחה. אין התראות לטלפון: כשמגיעה הודעה חדשה מופיעה נקודה אדומה על הלשונית.";
-$("#panel-chat .lead").insertAdjacentHTML("afterend", '<p class="note" style="margin-top:0">לדברים דחופים: <a href="' + WHATSAPP_URL + '" target="_blank" rel="noopener">קבוצת הווטסאפ</a></p>');
+$("#panel-photo .lead").textContent = "כל המשפחה רואה את התמונות כאן, וכל אחד יכול להוסיף ולמחוק. לוחצים על תמונה כדי להגדיל, לשמור או למחוק.";
+$("#panel-chat .lead").textContent = "הודעות בין כל בני המשפחה. כשמגיעה הודעה חדשה מופיעה נקודה אדומה על הלשונית.";
 
 // Day picker for uploads.
 (function(){
@@ -93,7 +86,7 @@ async function openLb(id){
   $("#lbImg").src = cur.thumb; $("#lbFull").hidden = true;
   const d = DAYS.find(x => x.label === cur.day);
   $("#lbCap").textContent = (d ? d.dow + " " + d.label : "") + (names[cur.by] ? " · " + names[cur.by] : "");
-  $("#lbDel").hidden = cur.by !== uid; delArm = false; $("#lbDel").textContent = "מחק";
+  $("#lbDel").hidden = false; delArm = false; $("#lbDel").textContent = "מחק";
   $("#lb").hidden = false; $("#lbClose").focus();
   try {
     const s = await getDoc(doc(db, "photoFull", cur.id));
