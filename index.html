@@ -270,14 +270,20 @@ nav.tabs button.hasNew::after{content:"";position:absolute;top:3px;left:3px;widt
 
     <section class="panel" id="panel-photo" hidden>
       <h2>תמונות מהטיול</h2>
-      <p class="lead">כל המשפחה מעלה תמונות לאלבום המשותף. התמונות נשמרות באיכות מלאה, גם אחרי הטיול.</p>
-      <div class="card"><h3>האלבום המשותף</h3><p>פותחים, ומוסיפים תמונות בכפתור ההוספה שבאלבום.</p><a class="primary" style="display:inline-block;text-decoration:none;margin-top:8px" href="https://photos.app.goo.gl/r6KUkVwqgfh6FhDt6" target="_blank" rel="noopener">פתח את האלבום</a></div>
+      <p class="lead">כל מי שהאפליקציה משותפת איתו רואה את התמונות כאן, וגם יכול להוסיף.</p>
+      <div class="photobar"><label class="primary" id="phUp" for="phIn">+ העלאת תמונות</label><input type="file" id="phIn" accept="image/*" multiple hidden><label for="phDay" class="sr">של איזה יום</label><select id="phDay"></select></div>
+      <p class="note" id="phMsg" aria-live="polite" style="margin-top:0"></p>
+      <div class="chips" id="phFilter"></div>
+      <p class="lead" id="phEmpty">עוד אין תמונות. בסוף כל יום מעלים כמה רגעים יפים.</p>
+      <div class="pgrid" id="pgrid"></div>
     </section>
 
     <section class="panel" id="panel-chat" hidden>
       <h2>צ׳אט משפחתי</h2>
-      <p class="lead">ההודעות בקבוצת הווטסאפ של המשפחה, עם התראות לטלפון.</p>
-      <div class="card"><h3>קבוצת הווטסאפ</h3><p>בווינה צריך אינטרנט: eSIM או נקודה חמה.</p><a class="primary" style="display:inline-block;text-decoration:none;margin-top:8px" href="https://chat.whatsapp.com/COywLU09MQo7SyMrSJdhJF" target="_blank" rel="noopener">פתח בווטסאפ</a></div>
+      <p class="lead">הודעות בין כל מי שהאפליקציה משותפת איתו. אין התראות לטלפון: כשמגיעה הודעה חדשה מופיעה נקודה אדומה על הלשונית. לדברים דחופים, ווטסאפ.</p>
+      <p class="note" id="chMsg" style="margin-top:0"></p>
+      <div class="chatlist" id="chatlist"><p class="lead">טוען הודעות...</p></div>
+      <form class="chatform" id="chatform"><label for="chatIn" class="sr">הודעה</label><textarea id="chatIn" rows="1" placeholder="כתבו הודעה..."></textarea><button class="primary" id="chatSend" type="submit">שלח</button></form>
     </section>
 
     <section class="panel" id="panel-info" hidden>
@@ -298,6 +304,7 @@ nav.tabs button.hasNew::after{content:"";position:absolute;top:3px;left:3px;widt
   <div class="answer" id="askOut" aria-live="polite"></div>
 </div>
 
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="תמונה" hidden dir="rtl"><img id="lbImg" alt=""><div class="lbbar"><span id="lbCap"></span><a class="copy" id="lbFull" target="_blank" rel="noopener">גודל מלא</a><button class="copy" id="lbDel" type="button">מחק</button><button class="copy" id="lbClose" type="button">סגור</button></div></div>
 
 <nav class="tabs" aria-label="חלקי האפליקציה" dir="rtl">
   <div class="inner" role="tablist">
@@ -833,6 +840,7 @@ function applyRemote(d){
 
 
 </script>
+<script type="module" src="family.js"></script>
 <script>
 if ("serviceWorker" in navigator) {
   addEventListener("load", () => {

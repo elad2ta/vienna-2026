@@ -1,7 +1,10 @@
 ﻿// Offline support. Bump VERSION on every change so phones pick up the new version.
-const VERSION = "v3";
+const VERSION = "v4";
 const CACHE = "vienna-" + VERSION;
-const CORE = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
+const CORE = ["./", "index.html", "family.js", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"];
+// Only these outside hosts are cached; everything else (Firebase data and sign-in) always goes to the network.
+const CACHE_HOSTS = ["cdnjs.cloudflare.com", "fonts.googleapis.com", "fonts.gstatic.com"];
+const isCacheable = url => url.origin === self.location.origin || CACHE_HOSTS.includes(url.host) || (url.host === "www.gstatic.com" && url.pathname.startsWith("/firebasejs/"));
 const CDN = [
   "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js",
   "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
@@ -23,6 +26,7 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;               // the internet check uses HEAD: always goes to the network
   const url = new URL(req.url);
   if (url.searchParams.has("ping")) return;
+  if (req.mode !== "navigate" && !isCacheable(url)) return;
 
   // Pages: network first so updates show up when online, cache when offline.
   if (req.mode === "navigate") {
