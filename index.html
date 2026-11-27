@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>בת המצווה של יעל בווינה</title>
+<meta name="theme-color" content="#173d2e">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="וינה">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>
+/* Layout: phone-first trip companion — Viennese Advent night: fir-green bar strung with market lights, gold candlelight accents */
+:root{
+  --bg:#ffffff; --surface:#ffffff; --ink:#16232e; --muted:#566573; --line:#ecdfe2; --snow:rgba(110,155,210,.8);
+  --bg-art:radial-gradient(900px 420px at 100% 0,#ffd9e0 0,transparent 65%),radial-gradient(800px 520px at 0 100%,#d6f3e2 0,transparent 65%),radial-gradient(600px 300px at 0 20%,#fff1c9 0,transparent 60%);
+  --accent:#c41e3a; --accent-soft:#fde6ea; --flame:#c08a12; --flame-soft:#fff4d6; --pine:#1d6b4f;
+  --bar:#173d2e; --bar-ink:#f6ecd4; --gold:#d8ad45;
+  --display:"Fredoka","Varela Round",system-ui,sans-serif; --round:var(--display); --body:var(--display);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14352a; --surface:#1c4436; --ink:#f4efe2; --muted:#b9c9be; --line:#2e5c4a; --snow:rgba(255,255,255,.8);
+  --bg-art:radial-gradient(900px 420px at 100% 0,rgba(228,98,111,.28) 0,transparent 65%),radial-gradient(700px 500px at 0 100%,rgba(233,194,98,.18) 0,transparent 65%);
+  --accent:#ff7a86; --accent-soft:#4a2328; --flame:#f2c862; --flame-soft:#3d3a1f; --pine:#8be0b8;
+  --bar:#0e2a20; --bar-ink:#f6ead0; --gold:#f2c862; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14352a; --surface:#1c4436; --ink:#f4efe2; --muted:#b9c9be; --line:#2e5c4a; --snow:rgba(255,255,255,.8);
+  --bg-art:radial-gradient(900px 420px at 100% 0,rgba(228,98,111,.28) 0,transparent 65%),radial-gradient(700px 500px at 0 100%,rgba(233,194,98,.18) 0,transparent 65%);
+  --accent:#ff7a86; --accent-soft:#4a2328; --flame:#f2c862; --flame-soft:#3d3a1f; --pine:#8be0b8;
+  --bar:#0e2a20; --bar-ink:#f6ead0; --gold:#f2c862; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg-art),var(--bg);background-attachment:fixed;min-height:100%;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bar)}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 96px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bar);color:var(--bar-ink);border-bottom:3px solid var(--gold);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:12px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.brand{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+h1{font-family:var(--display);font-weight:700;font-size:1.7rem;line-height:1.1;margin:0;color:var(--gold)}
+.status{font-size:.9rem;color:var(--bar-ink);opacity:.8;font-variant-numeric:tabular-nums}
+.lights{display:flex;justify-content:space-between;height:16px;margin:8px 0 0;position:relative;direction:ltr}
+.lights::before{content:"";position:absolute;inset:3px 0 auto;height:1px;background:rgba(246,236,212,.35)}
+.bulb{width:7px;height:10px;margin-top:3px;border-radius:50% 50% 45% 45%;background:var(--c);box-shadow:0 0 7px 1px var(--c);animation:twinkle 2.6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.3;box-shadow:none}}
+.days{display:flex;gap:6px;overflow-x:auto;padding:10px 0 12px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.daybtn{flex:0 0 auto;min-width:64px;border:1px solid rgba(246,236,212,.25);background:transparent;color:var(--bar-ink);border-radius:12px;padding:6px 8px;font-family:var(--body);cursor:pointer;text-align:center}
+.daybtn b{display:block;font-family:var(--round);font-weight:600;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.daybtn span{font-size:.8rem;color:var(--bar-ink);opacity:.75}
+.daybtn[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#14231b;animation:bounce .45s ease-out}
+@keyframes bounce{0%{transform:scale(.9)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+.daybtn[aria-selected="true"] span{color:#14231b;opacity:.85}
+.daybtn .today-dot{display:block;height:5px;width:5px;border-radius:50%;margin:3px auto 0;background:#e4626f}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--flame);outline-offset:2px}
+.dayhead{margin:16px 0 6px;padding:16px;border-radius:16px;color:#fff4dc;background:radial-gradient(circle,rgba(255,255,255,.22) 1px,transparent 1.6px) 0 0/18px 18px,linear-gradient(135deg,#c81e3a,#861122);animation:pop .45s ease-out}
+@keyframes pop{from{transform:scale(.96);opacity:.4}to{transform:none;opacity:1}}
+#panel-day .dayhead h2{font-family:var(--display);font-weight:700;font-size:1.65rem;line-height:1.2;margin:0 0 2px;text-wrap:balance;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.dayhead .greet{margin:0;font-size:1rem;font-weight:600;color:#ffe9a8}
+.dayhead .tag{background:rgba(255,255,255,.2);color:#fff}
+.dayhead .tag.pine{background:transparent;border:1px solid #ffd970;color:#ffd970}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.tag.pine{background:transparent;border:1px solid var(--pine);color:var(--pine)}
+.menorah{display:flex;align-items:center;gap:12px;background:var(--flame-soft);border:1px solid var(--gold);border-radius:12px;padding:20px 12px 10px;margin:12px 0}
+.menorah .lamps{display:flex;gap:4px;direction:ltr;align-items:flex-end}
+.lamp{position:relative;width:6px;height:16px;border-radius:2px;background:var(--line)}
+.lamp.on{background:linear-gradient(#ffffff,#8fb4ff)}
+.lamp.shamash{height:22px;background:linear-gradient(#ffffff,#8fb4ff)}
+.lamp.on::after,.lamp.shamash::after{content:"";position:absolute;left:50%;top:-12px;width:7px;height:10px;margin-left:-3.5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff6c8,#ffb52e 60%,#ff7a1a);box-shadow:0 0 10px 2px rgba(255,181,46,.6);transform-origin:50% 100%;animation:flicker 1.2s ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+@keyframes flicker{0%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.15,.9) rotate(3deg)}100%{transform:scale(.92,1.1) rotate(-1deg)}}
+.menorah p{margin:0;font-size:.95rem}
+.timeline{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column}
+.slot{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);animation:rise .4s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.enter{animation:rise .35s ease-out}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1}
+.infohead{font-size:1.2rem;color:var(--pine);margin:22px 0 8px}
+.applist{display:grid;gap:8px}
+.app{display:grid;grid-template-columns:1fr auto;gap:2px 10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.app b{font-size:1.02rem}
+.app .why{grid-column:1/-1;color:var(--muted);font-size:.92rem}
+.app .must{font-size:.75rem;font-weight:600;color:#fff;background:var(--accent);border-radius:999px;padding:1px 8px;align-self:center}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.fact .k{font-size:.8rem;color:var(--muted)}
+.fact .v{font-weight:600}
+.fact p{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.confetti{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:20;animation:fly .9s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) rotate(540deg);opacity:0}}
+.cheer{display:none;margin:12px 0 0;padding:12px;border-radius:12px;text-align:center;font-family:var(--display);font-weight:700;font-size:1.3rem;color:#fff4dc;background:linear-gradient(135deg,#1d4d3a,#2f7a5a)}
+.cheer.show{display:block;animation:pop .5s ease-out}
+.slot:last-child{border-bottom:0}
+.when{font-family:var(--body);font-weight:700;font-size:.9rem;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:2px}
+.what{min-width:0}
+.what strong{display:block;font-size:1.05rem}
+.what p{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+.key .what strong{color:var(--accent)}
+.maplinks{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.maplinks a{font-size:.85rem;color:var(--pine);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:2px 8px;background:var(--surface)}
+.option{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:10px}
+.option h3{margin:0 0 4px;font-family:var(--round);font-weight:600;font-size:1.1rem}
+.option p{margin:0;color:var(--muted)}
+section.panel h2{font-family:var(--display);font-weight:700;font-size:1.7rem;line-height:1.2;margin:20px 0 4px;color:var(--pine)}
+.lead{color:var(--muted);margin:0 0 12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.card h3{margin:0 0 2px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.num{font-family:var(--body);font-weight:700;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;user-select:all}
+.copy{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:4px 10px;font-family:var(--body);cursor:pointer}
+.food{display:grid;gap:10px}
+.card.sos{border:2px solid var(--accent)}
+.card.sos h3{color:var(--accent)}
+.phrase{border-top:1px solid var(--line);padding:10px 0 2px;margin-top:10px}
+.phrase .de{font-weight:700;font-size:1.1rem;text-align:left}
+.phrase .say{color:var(--ink);margin-top:2px}
+.phrase .he{color:var(--muted);font-size:.9rem}
+.sosnums{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.steps{margin:8px 0 0;padding-inline-start:20px;display:grid;gap:6px}
+.steps li{color:var(--ink)}
+.phrase p{margin:2px 0 0}
+.sosnums span{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:4px 12px;font-weight:600}
+.food .card .where{font-size:.85rem;color:var(--pine);margin-top:4px}
+.checklist{list-style:none;padding:0;margin:0}
+.todogroup{border-bottom:0!important;margin-bottom:14px}
+.tghead{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:1.1rem;color:var(--pine);padding:8px 0 4px;border-bottom:2px solid var(--gold)}
+.tgcount{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.checklist li{border-bottom:1px solid var(--line)}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;cursor:pointer}
+.checklist input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:0 0 auto}
+.checklist input:checked + span{color:var(--muted);text-decoration:line-through}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:6px 0 12px}
+.progress i{display:block;height:100%;background:var(--pine);width:0;transition:width .3s}
+.note{font-size:.85rem;color:var(--muted);margin-top:16px}
+nav.tabs{position:fixed;bottom:0;left:0;right:0;z-index:6;background:var(--bar);border-top:3px solid var(--gold);display:flex;justify-content:center;padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+nav.tabs .inner{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;width:100%;max-width:640px}
+nav.tabs button{border:0;background:transparent;color:var(--bar-ink);opacity:.8;font-family:var(--body);font-weight:600;font-size:.78rem;padding:8px 1px;border-radius:10px;cursor:pointer}
+nav.tabs button[aria-selected="true"]{color:#14231b;background:var(--gold);opacity:1}
+nav.tabs button.sostab{color:#ffb3bd;opacity:1}
+nav.tabs button.netOn{background:#00a63e;color:#fff;opacity:1}
+nav.tabs button.netOff{background:#e00000;color:#fff;opacity:1}
+nav.tabs button.netWarn{background:#ffe100;color:#000;opacity:1}
+nav.tabs button.netOn[aria-selected="true"],nav.tabs button.netOff[aria-selected="true"],nav.tabs button.netWarn[aria-selected="true"]{box-shadow:inset 0 0 0 2px var(--gold)}
+.netstate{margin:4px 0 12px;padding:10px 12px;border-radius:12px;font-weight:600;color:#fff;background:#566573}
+.netstate.on{background:#00a63e}
+.netstate.off{background:#e00000}
+.netstate.warn{background:#ffe100;color:#000}
+nav.tabs button.sostab[aria-selected="true"]{background:#c41e3a;color:#fff}
+details.sec{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 14px}
+details.sec summary{list-style:none;cursor:pointer;font-size:1.15rem;font-weight:700;color:var(--pine);display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0}
+details.sec summary::-webkit-details-marker{display:none}
+details.sec summary::after{content:"";width:9px;height:9px;border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:rotate(-45deg);transition:transform .2s;margin-bottom:4px}
+details.sec[open] summary::after{transform:rotate(135deg);margin-bottom:-4px}
+details.sec .count{font-size:.8rem;font-weight:600;color:var(--muted);margin-inline-start:auto}
+.sec-body{padding:0 0 14px}
+.sec-body .card{background:var(--bg)}
+.app .maplinks{grid-column:1/-1;margin-top:4px}
+.fact .maplinks{margin-top:6px}
+.net{font-size:.8rem;margin-inline-start:6px;white-space:nowrap;display:inline-block}
+.net.on{color:#7ee2a8}
+.net.off{color:#ff8a96;font-weight:700}
+.netbox p{margin:0 0 8px}
+.netbox details.sec:first-child{border:2px solid var(--accent)}
+.netbox details.sec:first-child summary{color:var(--accent)}
+#netPanel{padding:2px 12px 12px}
+.roam h3,.nethead{margin:0 0 6px;font-size:1.05rem;color:var(--accent)}
+.nethead{color:var(--pine)}
+.roam b{display:block;margin-top:8px}
+.roam .steps{margin-top:4px}
+.netbox .how{background:var(--bg);border-radius:10px;padding:8px 10px;margin-bottom:10px;font-size:.92rem}
+.netform{display:grid;gap:8px;margin:8px 0}
+.netform label{display:grid;gap:2px;font-size:.88rem;color:var(--muted)}
+.netform input{font:inherit;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--bg);color:var(--ink);direction:ltr;text-align:left}
+#hsQr{display:flex;justify-content:center;margin:10px 0}
+#hsQr svg{width:220px;height:220px;background:#fff;border-radius:12px;padding:6px}
+.netbox ul{margin:8px 0 0;padding-inline-start:18px;display:grid;gap:4px;color:var(--muted);font-size:.92rem}
+.askbtn{font-size:.85rem;border:1px solid var(--accent);color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:2px 10px;cursor:pointer;font-family:var(--body);font-weight:600}
+.sheet-back{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:30}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:31;max-height:85vh;overflow:auto;background:var(--surface);color:var(--ink);border-radius:18px 18px 0 0;border-top:3px solid var(--gold);padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));max-width:640px;margin:0 auto;animation:rise .3s ease-out}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sheet h3{margin:0;font-size:1.2rem;color:var(--pine)}
+.sheet-ctx{color:var(--muted);margin:4px 0 10px;font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:4px 10px;font-family:var(--body);cursor:pointer;font-size:.85rem}
+.sheet textarea{width:100%;font:inherit;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--bg);color:var(--ink);resize:vertical}
+.primary{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:8px 20px;font-family:var(--body);font-weight:600;cursor:pointer}
+.primary:disabled{opacity:.6}
+.sheet .row{margin-top:8px;justify-content:flex-start}
+.sheet .row a{color:var(--pine);font-size:.9rem}
+.answer{margin-top:12px;white-space:pre-wrap;line-height:1.6}
+.answer:empty{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body.no-sample #askGo,body.no-sample #askStop{display:none}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}#snow{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap" dir="rtl">
+  <header class="top">
+    <div class="brand"><h1>בת המצווה של יעל</h1><div class="status" id="status"></div></div>
+    <div class="lights" id="lights" aria-hidden="true"></div>
+    <div class="days" id="days" role="tablist" aria-label="ימי הטיול"></div>
+  </header>
+
+  <main>
+    <section class="panel" id="panel-day"></section>
+
+    <section class="panel" id="panel-food" hidden>
+      <h2>איפה אוכלים</h2>
+      <p class="lead">רוב הבקרים במטבחון. כדאי לבדוק שעות פתיחה במפות לפני שיוצאים.</p>
+      <div class="food" id="food"></div>
+      <div class="card" style="margin-top:10px"><h3>משלוחים למלון</h3><p>וולט ו־Uber Eats עובדות עם החשבונות מהארץ. ב־Lieferando צריך חשבון חדש. תן ביס לא עובדת בחו״ל.</p></div>
+    </section>
+
+    <section class="panel" id="panel-move" hidden>
+      <h2>תחבורה</h2>
+      <p class="lead">בעיר מסתדרים ברכבת התחתית וברגל. לשדה התעופה עם המזוודות, מונית במחיר קבוע.</p>
+      <div id="move"></div>
+    </section>
+
+    <section class="panel" id="panel-todo" hidden>
+      <h2>משימות</h2>
+      <p class="lead" id="todo-count"></p>
+      <div class="progress" aria-hidden="true"><i id="todo-bar"></i></div>
+      <ul class="checklist" id="todo"></ul>
+      <div class="cheer" id="cheer">הכול מוכן! נסיעה טובה וחג שמח</div>
+      <p class="note">הסימונים נשמרים רק בדפדפן הזה, בטלפון שלך.</p>
+    </section>
+
+    <section class="panel" id="panel-net" hidden>
+      <h2>אינטרנט לכל המשפחה</h2>
+      <div class="netstate" id="netState" aria-live="polite">בודק חיבור...</div>
+      <div class="card" id="netPanel"></div>
+    </section>
+
+    <section class="panel" id="panel-sos" hidden>
+      <h2>חירום</h2>
+      <div id="sos"></div>
+    </section>
+
+    <section class="panel" id="panel-info" hidden>
+      <h2>פרטים חשובים</h2>
+      <div id="info"></div>
+    </section>
+  </main>
+</div>
+
+<div class="sheet-back" id="askBack" hidden></div>
+<div class="sheet" id="askSheet" role="dialog" aria-modal="true" aria-labelledby="askTitle" hidden dir="rtl">
+  <div class="sheet-head"><h3 id="askTitle">שאל את Claude</h3><button class="copy" id="askClose">סגור</button></div>
+  <p class="sheet-ctx">השאלה תיפתח בצ׳אט של Claude, עם כל הפרטים על הטיול.</p>
+  <div class="chips" id="askChips"></div>
+  <label for="askQ" class="sr">השאלה</label>
+  <textarea id="askQ" rows="3"></textarea>
+  <div class="row"><button class="primary" id="askGo">שאל</button><button class="copy" id="askStop" hidden>עצור</button><a id="askOpen" target="_blank" rel="noopener">פתח בצ׳אט של Claude</a></div>
+  <div class="answer" id="askOut" aria-live="polite"></div>
+</div>
+
+<nav class="tabs" aria-label="חלקי האפליקציה" dir="rtl">
+  <div class="inner" role="tablist">
+    <button data-panel="day" aria-selected="true">ימים</button>
+    <button data-panel="food">אוכל</button>
+    <button data-panel="move">תחבורה</button>
+    <button data-panel="todo">משימות</button>
+    <button data-panel="info">פרטים</button>
+    <button data-panel="net">אינטרנט</button>
+    <button data-panel="sos" class="sostab">חירום</button>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const map = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+
+const DAYS = [
+  { date:"2026-12-04", dow:"שישי", label:"4.12", title:"נחיתה וערב ראשון", candles:1, tags:[],
+    slots:[
+      {t:"13:15", h:"נחיתה בווינה", p:"מונית במחיר קבוע או Uber למלון, כ־30 דקות.", maps:[["המלון","Appartement-Hotel an der Riemergasse Wien"]]},
+      {t:"אחה״צ", h:"קניות למטבחון", p:"Billa ב־Singerstraße 6, כמה דקות מהמלון (שבת עד 18:00, ראשון סגור). חלופה: Spar, Wollzeile 39.", maps:[["Billa","Billa Singerstraße 6 1010 Wien"],["Spar","Spar Wollzeile 39 1010 Wien"]]},
+      {t:"אחה״צ", h:"סטפנסדום והשוק בסטפנספלאץ", p:"5 דקות הליכה מהמלון.", maps:[["סטפנספלאץ","Stephansplatz Weihnachtsmarkt Wien"]]},
+      {t:"ערב", h:"Graben, Kohlmarkt ושוק רחבת העירייה", p:"רחובות מוארים, ובשוק ב־Rathausplatz יש בדרך כלל גם משטח החלקה על הקרח.", maps:[["Rathausplatz","Wiener Christkindlmarkt Rathausplatz"]]},
+      {t:"ערב", h:"נר ראשון של חנוכה", p:"בחדר.", key:true}
+    ]},
+  { date:"2026-12-05", dow:"שבת", label:"5.12", title:"שווקים ואוכל", candles:2, tags:["ליל הקרמפוס"],
+    slots:[
+      {t:"בוקר", h:"ארוחת בוקר ב־Café Prückel", p:"בית קפה וינאי קלאסי, קרוב למלון.", maps:[["Café Prückel","Café Prückel Wien"]]},
+      {t:"צהריים", h:"Naschmarkt ושוק הפשפשים", q:"אילו מסעדות ודוכני אוכל מומלצים ב־Naschmarkt לארוחת צהריים בשבת עם הבנות? מה כדאי לטעום שם, ומה כדאי לחפש בשוק הפשפשים?", p:"בשבת יש לצידו שוק פשפשים. אפשר לאכול שם או ב־NENI.", maps:[["Naschmarkt","Naschmarkt Wien"]]},
+      {t:"אחה״צ", h:"Art Advent בקרלספלאץ", p:"שוק של אמנים ומלאכת יד.", maps:[["קרלספלאץ","Art Advent Karlsplatz Wien"]]},
+      {t:"שקיעה", h:"השוק מול ארמון בלוודר", p:"מגיעים בחשמלית D.", maps:[["בלוודר","Weihnachtsmarkt Schloss Belvedere"]]},
+      {t:"ערב", h:"נר שני", p:"הערב הוא גם ליל הקרמפוס. האירועים קורים בעיקר מחוץ למרכז.", key:true}
+    ]},
+  { date:"2026-12-06", dow:"ראשון", label:"6.12", title:"שנברון, העיר העתיקה והפראטר", candles:3, tags:["הבנות נוסעות חינם"],
+    slots:[
+      {t:"כל היום", h:"חנויות סגורות, שווקים פתוחים", p:"ילדים עד גיל 15 נוסעים היום בחינם בתחבורה הציבורית."},
+      {t:"בוקר", h:"ארמון שנברון והשוק שלו", p:"ברכבת התחתית קו U4.", maps:[["שנברון","Schloss Schönbrunn Weihnachtsmarkt"]]},
+      {t:"אחה״צ", h:"הופבורג ושווקי Am Hof ו־Freyung", p:"השווקים הקטנים והמקומיים יותר.", maps:[["Am Hof","Adventmarkt Am Hof Wien"],["Freyung","Altwiener Christkindlmarkt Freyung"]]},
+      {t:"ערב", h:"הפראטר: הגלגל הענק ושוק החורף", p:"Riesenrad בחושך, ושוק החורף ב־Riesenradplatz עם כמה מתקנים פתוחים, לפי מזג האוויר. הכניסה לשוק בחינם, והוא פתוח עד 22:00. מגיעים ב־U1 ל־Praterstern.", maps:[["Riesenradplatz","Riesenradplatz Wien"]]},
+      {t:"ערב", h:"נר שלישי", p:"", key:true}
+    ]},
+  { date:"2026-12-07", dow:"שני", label:"7.12", title:"טיול יום מחוץ לעיר", candles:4, tags:["צריך לבחור"],
+    slots:[], options:[
+      {h:"ואכאו (Wachau)", p:"רכבת מ־Franz-Josefs-Bahnhof לקרמס, כשעה נסיעה. משם לדירנשטיין ולמנזר מלק לאורך הדנובה. בחורף הספינות לא פועלות.", maps:[["Franz-Josefs-Bahnhof","Franz-Josefs-Bahnhof Wien"],["דירנשטיין","Dürnstein"],["מלק","Stift Melk"]]},
+      {h:"סמרינג (Semmering)", p:"מסילת ההרים, אתר מורשת עולמי של אונסק״ו, מהתחנה המרכזית, כשעה וחצי נסיעה. יש סיכוי טוב לשלג ולנופי הרים.", maps:[["התחנה המרכזית","Wien Hauptbahnhof"],["סמרינג","Semmering Bahnhof"]]}
+    ], after:{t:"ערב", h:"חזרה לוינה ונר רביעי", p:"ארוחת ערב קרוב למלון.", key:true}},
+  { date:"2026-12-08", dow:"שלישי", label:"8.12", title:"קניות וסיור האדריכלות", candles:5, tags:["חג Mariä Empfängnis","הבנות נוסעות חינם"],
+    slots:[
+      {t:"בוקר", h:"ארוחת בוקר ב־Vollpension", p:"בית קפה שבו אופות ומגישות סבתות מקומיות.", maps:[["Vollpension","Vollpension Wien"]]},
+      {t:"צהריים", h:"מריהילפר שטראסה", p:"רוב החנויות פתוחות בחג. סופרמרקטים ו־Naschmarkt סגורים.", maps:[["מריהילפר","Mariahilfer Straße Wien"]]},
+      {t:"17:00", h:"סיור מודרך ב־Az W", p:"\"Temporary. Structures of Necessity\", בגרמנית. בקופה: כרטיס תערוכה €12 וכרטיס סיור €5. לבקש קבלה.", key:true, maps:[["Az W","Architekturzentrum Wien Museumsplatz 1"]]},
+      {t:"17:00", h:"בינתיים: שוק Spittelberg", p:"אשתך והבנות מסתובבות בשוק הסמוך.", maps:[["Spittelberg","Weihnachtsmarkt Spittelberg"]]},
+      {t:"ערב", h:"שניצל ב־Schnitzelwirt", p:"שניצל ענק וזול ב־Neubaugasse.", maps:[["Schnitzelwirt","Schnitzelwirt Neubaugasse Wien"]]},
+      {t:"ערב", h:"נר חמישי", p:"להזמין מונית לשדה למחר.", key:true}
+    ]},
+  { date:"2026-12-09", dow:"רביעי", label:"9.12", title:"יום טיסה", candles:6, tags:[],
+    slots:[
+      {t:"בוקר", h:"Trześniewski וסיבוב אחרון", p:"כריכונים פתוחים ומזכרות אחרונות ליד סטפנספלאץ.", maps:[["Trześniewski","Trzesniewski Dorotheergasse Wien"]]},
+      {t:"11:45", h:"מונית לשדה", p:"מחיר קבוע שהוזמן מראש.", key:true},
+      {t:"14:45", h:"טיסה הביתה", p:"אלכוהול בדיוטי פרי. להחזר מע״מ על קניות מעל €75, לגשת לפני הבידוק.", maps:[["שדה התעופה","Flughafen Wien"]]},
+      {t:"ערב", h:"נר שישי בבית", p:"נחיתה ב־19:15."}
+    ]}
+];
+
+const FOOD = [
+  ["Billa / Spar","קניות למטבחון: ירקות, Topfen, קוטג׳","Singerstraße 6 / Wollzeile 39","Billa Singerstraße 6 1010 Wien"],
+  ["Café Prückel","ארוחת בוקר וינאית ועוגות","Stubenring, ליד המלון","Café Prückel Wien"],
+  ["Café Diglas","ארוחת בוקר ועוגות","Wollzeile, ליד המלון","Café Diglas Wollzeile"],
+  ["Vollpension","בית קפה של סבתות","רובע 4","Vollpension Wien"],
+  ["Trześniewski","כריכונים פתוחים, מוסד וינאי","Dorotheergasse","Trzesniewski Dorotheergasse Wien"],
+  ["Mochi","יפני וסושי. בערב להזמין מקום","Hoher Markt, 5 דקות מהמלון","Mochi Hoher Markt Wien"],
+  ["Akakiko","רשת סושי עממית","כמה סניפים במרכז","Akakiko Wien"],
+  ["Miznon","ישראלי","Schulerstraße, רובע 1","Miznon Schulerstraße Wien"],
+  ["NENI","ישראלי־ים תיכוני","Naschmarkt","NENI Naschmarkt Wien"],
+  ["Schnitzelwirt","שניצל ענק וזול","Neubaugasse, ליד Az W","Schnitzelwirt Neubaugasse Wien"],
+  ["Figlmüller","השניצל המפורסם. להזמין מראש","כמה סניפים במרכז","Figlmüller Wien"],
+  ["Vapiano","פסטה ופיצה מהירות","כמה סניפים במרכז","Vapiano Wien"],
+  ["Bitzinger","נקניקיות ו־Käsekrainer","ליד אלברטינה","Bitzinger Albertina Wien"],
+  ["Zanoni & Zanoni","גלידה וקינוחים, פתוח גם בחורף","Lugeck, ליד סטפנספלאץ","Zanoni Zanoni Lugeck Wien"]
+];
+
+const MOVE = [
+  {h:"Taxi 31300", p:"מחיר קבוע לשדה €37 לעד 4 נוסעים, בהזמנה באפליקציה. לציין 2 מזוודות גדולות.", num:"+43 1 31300"},
+  {h:"Taxi 40100", p:"מחיר קבוע לשדה €42 לעד 4 נוסעים.", num:"+43 1 40100"},
+  {h:"Uber / Bolt", p:"נכנסים לאפליקציית Uber עם פרטי החשבון של Uber Eats."},
+  {h:"רכבת CAT לשדה", p:"כ־€15 למבוגר, 16 דקות ל־Wien Mitte ומשם כ־10 דקות הליכה למלון. לארבעה אנשים יקר ממונית."},
+  {h:"WienMobil", p:"קונים בה כרטיסים לתחבורה הציבורית, וכרטיס דיגיטלי לא צריך תיקוף. למבוגרים משתלם כרטיס של 72 שעות מהשבת. ילדים עד גיל 15 נוסעים בחינם בראשון ובחגים (6.12, 8.12), ובשאר הימים בחצי מחיר."},
+  {h:"הקווים שלכם", p:"Stephansplatz (U1/U3) ו־Stubentor (U3) ליד המלון. U3 ל־Volkstheater ומריהילפר, U4 לשנברון, U1 ל־Praterstern, חשמלית D לבלוודר."},
+  {h:"טיול היום", p:"הרכבות של ÖBB מחוץ לווינה דורשות כרטיס נפרד, באפליקציה או באתר של ÖBB."}
+];
+
+const TODO_GROUPS = [
+  {id:"before", title:"לפני הטיול", items:[
+    ["esim","לקנות כרטיס eSIM לגלישה ולהתקין אותו בארץ, לפני הטיסה"],
+    ["insure","לעשות ביטוח נסיעות לארבעתכם (רפואי וכבודה)"],
+    ["daytrip","לבחור טיול יום (ואכאו או סמרינג) ולקנות כרטיסי ÖBB"],
+    ["apps","להתקין את האפליקציות (הרשימה בלשונית פרטים), כולל מפות ותרגום לשימוש בלי אינטרנט"],
+    ["menorah","לארוז חנוכייה ונרות לשישה ערבים"],
+    ["winter","לארוז בגדי חורף. מחממי ידיים נטענים רק בתיק היד"],
+    ["note","פתק בכיס לכל בת: שם המלון ומספר הווטסאפ של ההורים"],
+    ["roaming","למנוע חיובי נדידה בסימים הישראליים (ההנחיות בלשונית אינטרנט)"]
+  ]},
+  {id:"during", title:"במהלך הטיול", items:[
+    ["reserve","במסעדות פופולריות להזמין מקום מראש לארוחות ערב, במיוחד בסוף השבוע"],
+    ["news","בכל בוקר: לבדוק בחדשות אם יש הפגנות מתוכננות בעיר"],
+    ["receipt","8.12: לקבל קבלה בקופה של Az W"]
+  ]},
+  {id:"return", title:"לקראת החזרה", items:[
+    ["extrabag","אם הקניות לא נכנסות: להוסיף מזוודה לטיסת החזור דרך בלו בירד ($85), מראש ולא בשדה"],
+    ["taxi","8.12: להזמין מונית לשדה במחיר קבוע ליום הטיסה"],
+    ["checkout","9.12: יוצאים מהמלון ב־11:45. עם טפסי Tax Free, לגשת להחזר מע״מ לפני הבידוק"],
+    ["invoice","אחרי החזרה: לבקש חשבונית מ־office@azw.at בשביל רואה החשבון"]
+  ]}
+];
+const TODO_ALL = TODO_GROUPS.flatMap(g => g.items.map(([id]) => id));
+
+const INFO = [
+  {h:"המלון", p:"Appartement-Hotel an der Riemergasse, רובע 1. ניקיון יומי, מטבחון, ארוחת בוקר €15 לאדם.", maps:"Appartement-Hotel an der Riemergasse Wien"},
+  {h:"טיסה הלוך", p:"בלו בירד, שישי 4.12, 10:30 מתל אביב, נחיתה 13:15."},
+  {h:"טיסה חזור", p:"רביעי 9.12, 14:45 מווינה, נחיתה 19:15. יוצאים מהמלון ב־11:45. המזוודות נקנו. מזוודה נוספת לחזרה עולה $85, וכדאי להוסיף אותה מראש."},
+  {h:"סיור Az W", p:"שלישי 8.12, 17:00–18:00, Museumsplatz 1.", num:"office@azw.at", maps:"Architekturzentrum Wien Museumsplatz 1"},
+  {h:"חירום באירופה", p:"מספר חירום אחיד.", num:"112"}
+];
+
+const APPS = [
+  {n:"WienMobil", store:["WienMobil"], why:"האפליקציה הרשמית של Wiener Linien: קניית כרטיסים (72 שעות, יומי, בודד), תכנון מסלול וזמנים בזמן אמת. להירשם ולהכניס כרטיס אשראי כבר בארץ.", must:true},
+  {n:"ÖBB Tickets", store:["ÖBB Tickets"], why:"רכבות מחוץ לווינה, לטיול היום לואכאו או לסמרינג. הכרטיס נשמר באפליקציה.", must:true},
+  {n:"Google Maps", store:["Google Maps"], why:"ניווט ברגל ובתחבורה. כדאי להוריד מפה של וינה לשימוש בלי אינטרנט (Offline maps).", must:true},
+  {n:"Uber / Bolt", store:["Uber","Bolt"], why:"מוניות. ב־Uber מתחברים עם פרטי Uber Eats."},
+  {n:"Taxi 31300", store:["Taxi 31300"], why:"מונית לשדה במחיר קבוע של €37, רק בהזמנה דרך האפליקציה."},
+  {n:"Google Translate", store:["Google Translate"], why:"להוריד את הגרמנית לשימוש בלי אינטרנט. המצלמה מתרגמת תפריטים ושלטים.", must:true},
+  {n:"וולט / Uber Eats", store:["Wolt","Uber Eats"], why:"משלוחי אוכל למלון, עם החשבונות מהארץ."},
+  {n:"WhatsApp", store:["WhatsApp"], why:"הערוץ העיקרי לשיחות במשפחה, כי לאבא יש רק גלישה.", must:true},
+  {n:"אפליקציית ה־eSIM", why:"להתקין ולבדוק בארץ. בנחיתה רק מפעילים נתונים בנדידה."},
+  {n:"אפליקציית הבנק / האשראי", why:"כדי להקפיא את הכרטיס מיד, אם הוא אובד."}
+];
+const FACTS = [
+  {k:"מטבע", v:"יורו (€)", p:"כרטיס עובד ברוב המקומות. בדוכני שווקים כדאי שיהיה מעט מזומן."},
+  {k:"שעה", v:"שעה אחת פחות מבארץ", p:"כשבארץ 12:00, בווינה 11:00."},
+  {k:"מזג אוויר", v:"בערך מינוס 2 עד 5 מעלות", p:"חשוך כבר בערך ב־16:00, אז כדאי לתכנן את הסיורים לבוקר."},
+  {k:"שקעים", v:"סוג F (שני פינים עגולים)", p:"תקע עם שני פינים עגולים מהארץ נכנס. לתקע ישראלי עם שלושה פינים צריך מתאם."},
+  {k:"טיפ", v:"5–10%", p:"בדרך כלל מעגלים את הסכום כלפי מעלה ואומרים למלצר את הסכום הסופי."},
+  {k:"פיקדון על ספלים", v:"כ־€4–5 לספל", p:"בשווקים משלמים פיקדון (Pfand) על ספל הפונץ׳. מחזירים ומקבלים את הכסף, או שומרים כמזכרת."},
+  {k:"יום ראשון וחגים", v:"חנויות סגורות", p:"סופרמרקטים פתוחים רק בתחנות הרכבת, כמו Wien Mitte והתחנה המרכזית."},
+  {k:"מים", v:"מי הברז מעולים", p:"מגיעים מהאלפים, ובבתי קפה מגישים כוס מים בלי תשלום."},
+  {k:"החזר מע״מ", v:"מעל €75 בחנות", p:"מבקשים בקופה טופס Tax Free, ובשדה התעופה ניגשים להחזר לפני הבידוק."},
+  {k:"ברכות שימושיות", v:"Grüß Gott · Danke · Bitte", p:"שלום · תודה · בבקשה. בסוף הארוחה אומרים: Zahlen, bitte."}
+];
+const EMERG = [
+  {de:"Ich habe mich verlaufen. Können Sie mir helfen?", say:"איך האבה מיך פרלאופן. קֶנֶן זי מיר הלפן?", he:"הלכתי לאיבוד. אתם יכולים לעזור לי?"},
+  {de:"Mein Hotel ist in der Riemergasse, beim Stephansdom.", say:"מיין הוטל איסט אין דר רימרגאסה, ביים שטפנסדום.", he:"המלון שלי ברחוב רימרגאסה, ליד קתדרלת סטפנסדום."},
+  {de:"Haben Sie WLAN? Ich muss meine Eltern anrufen.", say:"האבן זי וולאן? איך מוס מיינה אלטרן אנרופן.", he:"יש לכם WiFi? אני צריכה להתקשר להורים שלי."},
+  {de:"Können Sie meine Eltern über WhatsApp anrufen?", say:"קֶנֶן זי מיינה אלטרן איבר וואטסאפ אנרופן?", he:"אתם יכולים להתקשר להורים שלי בווטסאפ?"},
+  {de:"Ich brauche Hilfe. Bitte rufen Sie die Polizei.", say:"איך בראוכה הילפה. ביטה רופן זי די פוליצאיי.", he:"אני צריכה עזרה. בבקשה תתקשרו למשטרה."}
+];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store = { get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}} };
+
+function viennaToday(){
+  try{ return new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Vienna"}).format(new Date()); }
+  catch(e){ return new Date().toISOString().slice(0,10); }
+}
+const today = viennaToday();
+let current = Math.max(0, DAYS.findIndex(d => d.date === today));
+
+function statusText(){
+  const start = new Date("2026-12-04T00:00:00"), now = new Date(today+"T00:00:00");
+  const diff = Math.round((start - now)/86400000);
+  if (diff > 1) return "עוד " + diff + " ימים · וינה בחנוכה";
+  if (diff === 1) return "טסים מחר!";
+  const i = DAYS.findIndex(d => d.date === today);
+  if (i >= 0) return "יום " + (i+1) + " מתוך 6 · חג שמח";
+  return "4–9.12.2026";
+}
+
+const ASKS = [];
+function askBtn(title, q){ ASKS.push({title, q}); return '<button class="askbtn" data-ask="'+(ASKS.length-1)+'">שאל את Claude</button>'; }
+const defaultQ = h => "מה כדאי לדעת על: " + h + "? מה לא לפספס, טיפים עם הבנות, ומסעדות טובות ולא תיירותיות בסביבה.";
+function mapLinks(list, extra){
+  if ((!list || !list.length) && !extra) return "";
+  return '<div class="maplinks">' + (list||[]).map(([n,q]) => '<a href="'+map(q)+'" target="_blank" rel="noopener">מפה: '+esc(n)+'</a>').join("") + (extra||"") + "</div>";
+}
+function slotHTML(s){
+  return '<li class="slot'+(s.key?' key':'')+'"><div class="when">'+esc(s.t)+'</div><div class="what"><strong>'+esc(s.h)+'</strong>'+(s.p?'<p>'+esc(s.p)+'</p>':'')+mapLinks(s.maps, s.maps ? askBtn(s.h, s.q || defaultQ(s.h)) : "")+'</div></li>';
+}
+function menorah(n){
+  let lamps = "";
+  for (let i=8;i>=1;i--){ lamps += '<span class="lamp'+(i<=n?' on':'')+'" style="--d:'+(i*0.17).toFixed(2)+'s"></span>'; if(i===5) lamps += '<span class="lamp shamash" style="--d:.4s"></span>'; }
+  return '<div class="menorah"><div class="lamps" aria-hidden="true">'+lamps+'</div><p><b>נר '+["","ראשון","שני","שלישי","רביעי","חמישי","שישי"][n]+' של חנוכה</b> הערב</p></div>';
+}
+
+function renderDays(){
+  $("#days").innerHTML = DAYS.map((d,i) =>
+    '<button class="daybtn" role="tab" aria-selected="'+(i===current)+'" data-i="'+i+'"><b>'+d.label+'</b><span>'+d.dow+'</span>'+(d.date===today?'<i class="today-dot" title="היום"></i>':'')+'</button>').join("");
+  $("#days").querySelectorAll(".daybtn").forEach(b => b.onclick = () => { current = +b.dataset.i; renderDays(); renderDay(); showPanel("day"); });
+  const sel = $("#days").querySelector('[aria-selected="true"]'); if (sel) sel.scrollIntoView({block:"nearest",inline:"center"});
+}
+function renderDay(){
+  const d = DAYS[current];
+  let html = '<div class="dayhead"><h2>'+d.dow+' '+d.label+': '+esc(d.title)+'</h2><p class="greet">'+GREET[current]+'</p>';
+  if (d.tags.length) html += '<div class="tags">'+d.tags.map(t=>'<span class="tag'+(t.includes("חינם")?' pine':'')+'">'+esc(t)+'</span>').join("")+'</div>';
+  html += '</div>' + menorah(d.candles);
+  if (d.slots.length) html += '<ul class="timeline">'+d.slots.map(slotHTML).join("")+'</ul>';
+  if (d.options) html += '<p class="lead" style="margin-top:12px">שתי אפשרויות, ובשתיהן הדרך עצמה היא חלק מהחוויה:</p>' + d.options.map(o => '<div class="option"><h3>'+esc(o.h)+'</h3><p>'+esc(o.p)+'</p>'+mapLinks(o.maps, askBtn(o.h, "טיול יום מווינה ל" + o.h + " בדצמבר: מה כדאי לראות, איך לתכנן את היום ברכבת, ואיפה אוכלים?"))+'</div>').join("") + '<ul class="timeline" style="margin-top:8px">'+slotHTML(d.after)+'</ul>';
+  $("#panel-day").innerHTML = html;
+  $("#panel-day").querySelectorAll(".slot").forEach((el,i) => el.style.animationDelay = (120 + i*70) + "ms");
+}
+const GREET = ["מזל טוב יעל! Grüß Gott, וינה","יום של פונץ׳ חם, לנגוש ושווקים","הערב עולים על הגלגל הענק!","יוצאים להרפתקה מחוץ לעיר","יום חג בווינה, קניות ושניצל ענק","Auf Wiedersehen, וינה. נחזור!"];
+function renderFood(){
+  $("#food").innerHTML = FOOD.map(([n,w,where,q]) => '<div class="card"><h3>'+esc(n)+'</h3><p>'+esc(w)+'</p><div class="where">'+esc(where)+'</div>'+mapLinks([["פתח במפה",q]], askBtn(n, "מה כדאי להזמין ב־" + n + " (" + where + ")? מה המחירים בערך, ומה עוד מומלץ בסביבה?"))+'</div>').join("");
+}
+function numRow(num){
+  return '<div class="row" style="margin-top:6px"><span class="num">'+esc(num)+'</span><button class="copy" data-copy="'+esc(num)+'">העתק</button></div>';
+}
+function renderMove(){ $("#move").innerHTML = MOVE.map(m => '<div class="card"><h3>'+esc(m.h)+'</h3><p>'+esc(m.p)+'</p>'+(m.num?numRow(m.num):'')+'</div>').join(""); }
+function renderSOS(){ $("#sos").innerHTML = '<div class="card sos"><h3>אם מישהו הלך לאיבוד</h3><p>נקודת מפגש קבועה: הכניסה הראשית של סטפנסדום. מראים למוכר או לשוטר את המשפט בגרמנית, או קוראים אותו לפי התעתיק.</p>' + EMERG.map(e => '<div class="phrase"><div class="de" lang="de" dir="ltr">'+esc(e.de)+'</div><div class="say">'+esc(e.say)+'</div><div class="he">'+esc(e.he)+'</div></div>').join("") + '<div class="sosnums"><span>חירום <b class="num">112</b></span><span>משטרה <b class="num">133</b></span><span>אמבולנס <b class="num">144</b></span></div><p style="margin-top:8px">לאבא יש חבילת גלישה בלבד, אז מתקשרים אליו רק בווטסאפ. WiFi יש בבתי קפה, במסעדות ובמלון. כדאי שלכל אחת מהבנות יהיה פתק בכיס עם שם המלון ומספר הווטסאפ של ההורים. עדיף לשמור את נקודת המפגש מראש, במקרה שאין WiFi.</p></div>' + hostileCard(); }
+const HOSTILE_STEPS = [
+  "לא להתווכח ולא להגיב לפרובוקציה. להתרחק בשקט למקום הומה ומואר: חנות, בית קפה או המלון.",
+  "להישאר ביחד. הבנות לא מסתובבות לבד בערב.",
+  "להתרחק מהפגנות ומהתקהלויות. כדאי לבדוק בחדשות בבוקר אם מתוכננת הפגנה בעיר.",
+  "במקומות צפופים ומתוחים אפשר לשקול להצניע סמלים בולטים ולדבר בשקט. זו החלטה שלכם, לא חובה.",
+  "אם מאיימים עליכם: לבקש עזרה מעובדי חנות או ממאבטח, ולהתקשר למשטרה ב־133.",
+  "אחרי אירוע: לרשום מתי ואיפה זה קרה, לצלם רק אם בטוח, להגיש תלונה במשטרה ולדווח למוקד של הקהילה היהודית."
+];
+const HOSTILE_DE = [
+  {de:"Ich werde bedroht. Bitte helfen Sie mir!", say:"איך ורדה בדרוהט. ביטה הלפן זי מיר!", he:"מאיימים עליי. בבקשה תעזרו לי!"},
+  {de:"Rufen Sie bitte die Polizei!", say:"רופן זי ביטה די פוליצאיי!", he:"בבקשה תתקשרו למשטרה!"}
+];
+function hostileCard(){
+  return '<div class="card sos" style="margin-top:14px"><h3>אם נתקלים בעוינות או באנטישמיות</h3>'
+    + '<ol class="steps">' + HOSTILE_STEPS.map(s => '<li>'+esc(s)+'</li>').join("") + '</ol>'
+    + HOSTILE_DE.map(e => '<div class="phrase"><div class="de" lang="de" dir="ltr">'+esc(e.de)+'</div><div class="say">'+esc(e.say)+'</div><div class="he">'+esc(e.he)+'</div></div>').join("")
+    + '<div class="phrase"><b>חמ״ל משרד החוץ, 24 שעות ביממה</b>' + numRow("+972-2-5303155") + '</div>'
+    + '<div class="phrase"><b>שגרירות ישראל בווינה</b><p>Anton-Frank-Gasse 20, 1180 Wien. קונסוליה במייל:</p>' + numRow("consular@vienna.mfa.gov.il") + mapLinks([["השגרירות","Botschaft Israel Anton-Frank-Gasse 20 Wien"]]) + '</div>'
+    + '<div class="phrase"><b>מוקד הדיווח על אנטישמיות של הקהילה היהודית (IKG)</b><div class="maplinks"><a href="https://www.antisemitismus-meldestelle.at/" target="_blank" rel="noopener">antisemitismus-meldestelle.at</a></div></div>'
+    + '</div>';
+}
+const secState = store.get("vienna-sec") || {net:true, bookings:true};
+function sec(id, title, count, body, def){ const isOpen = (id in secState) ? secState[id] : !!def; return '<details class="sec" data-sec="'+id+'"'+(isOpen?' open':'')+'><summary><span>'+esc(title)+'</span><span class="count">'+esc(count)+'</span></summary><div class="sec-body">'+body+'</div></details>'; }
+document.addEventListener("toggle", e => { const d = e.target; if (d && d.matches && d.matches("details.sec")) { secState[d.dataset.sec] = d.open; store.set("vienna-sec", secState); } }, true);
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isAndroid = /Android/.test(navigator.userAgent);
+function storeLinks(terms){
+  if (!terms) return [];
+  const out = [];
+  terms.forEach(t => {
+    const e = encodeURIComponent(t), label = terms.length > 1 ? " " + t : "";
+    if (!isAndroid) out.push(['App Store'+label, "https://apps.apple.com/us/iphone/search?term="+e]);
+    if (!isIOS) out.push(['Google Play'+label, "https://play.google.com/store/search?q="+e+"&c=apps"]);
+  });
+  return out;
+}
+function linkRow(links, extra){ return '<div class="maplinks">' + links.map(([n,u]) => '<a href="'+u+'" target="_blank" rel="noopener">הורדה: '+esc(n)+'</a>').join("") + (extra||"") + '</div>'; }
+function renderInfo(){ $("#info").innerHTML = sec("bookings", "ההזמנות שלכם", INFO.length + " פריטים", INFO.map(m => '<div class="card"><h3>'+esc(m.h)+'</h3><p>'+esc(m.p)+'</p>'+(m.num?numRow(m.num):'')+(m.maps?mapLinks([["פתח במפה",m.maps]]):'')+'</div>').join(""))
+  + sec("apps", "אפליקציות להוריד בארץ", APPS.length + " אפליקציות", '<div class="applist">' + APPS.map(a => '<div class="app"><b>'+esc(a.n)+'</b>'+(a.must?'<span class="must">חובה</span>':'<span></span>')+'<span class="why">'+esc(a.why)+'</span>'+linkRow(storeLinks(a.store), askBtn(a.n, "איך כדאי להגדיר ולהשתמש ב־" + a.n + " בטיול שלנו בווינה? מה לעשות כבר בארץ, וטיפים שחשוב לדעת."))+'</div>').join("") + '</div>')
+  + sec("facts", "טוב לדעת", FACTS.length + " נושאים", '<div class="facts">' + FACTS.map(f => '<div class="fact"><div class="k">'+esc(f.k)+'</div><div class="v">'+esc(f.v)+'</div><p>'+esc(f.p)+'</p><div class="maplinks">'+askBtn(f.k, "ספר לי עוד על הנושא הזה בווינה בדצמבר: " + f.k + " (" + f.v + "). מה חשוב לדעת ומה כדאי להכין מראש?")+'</div></div>').join("") + '</div>'); }
+
+let done = store.get("vienna-todo-v2") || {};
+function renderTodo(){
+  $("#todo").innerHTML = TODO_GROUPS.map(g => {
+    const n = g.items.filter(([id]) => done[id]).length;
+    return '<li class="todogroup"><div class="tghead"><span>'+esc(g.title)+'</span><span class="tgcount" id="tg-'+g.id+'">'+n+'/'+g.items.length+'</span></div><ul class="checklist">'
+      + g.items.map(([id,t]) => '<li><label><input type="checkbox" id="todo-'+id+'" data-id="'+id+'"'+(done[id]?' checked':'')+'><span>'+esc(t)+'</span></label></li>').join("") + '</ul></li>';
+  }).join("");
+  $("#todo").querySelectorAll("input").forEach(c => c.onchange = () => { done[c.dataset.id] = c.checked; store.set("vienna-todo-v2", done); updateCount(); if (c.checked) confetti(c, TODO_ALL.every(id => done[id]) ? 40 : 14); });
+  updateCount();
+}
+function updateCount(){
+  const n = TODO_ALL.filter(id => done[id]).length;
+  $("#todo-count").textContent = n + " מתוך " + TODO_ALL.length + " בוצעו";
+  $("#todo-bar").style.width = (100*n/TODO_ALL.length) + "%";
+  TODO_GROUPS.forEach(g => { const el = $("#tg-"+g.id); if (el) el.textContent = g.items.filter(([id]) => done[id]).length + "/" + g.items.length; });
+  $("#cheer").classList.toggle("show", n === TODO_ALL.length);
+}
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const COLORS = ["#ffd970","#e4626f","#7cc7a5","#ffffff","#8fb4ff"];
+function confetti(el, count){
+  if (reduce) return;
+  const r = el.getBoundingClientRect(), x0 = r.left + r.width/2, y0 = r.top + r.height/2;
+  for (let k=0;k<count;k++){
+    const p = document.createElement("i"); p.className = "confetti";
+    const a = Math.random()*Math.PI*2, dist = 40 + Math.random()*(count>20?160:70);
+    p.style.cssText = "left:"+x0+"px;top:"+y0+"px;background:"+COLORS[k%COLORS.length]+";--x:"+(Math.cos(a)*dist)+"px;--y:"+(Math.sin(a)*dist-30)+"px";
+    document.body.appendChild(p); setTimeout(()=>p.remove(), 950);
+  }
+}
+function buildLights(){
+  const box = $("#lights"); const n = Math.max(12, Math.floor(box.clientWidth/22));
+  let h = ""; for (let i=0;i<n;i++) h += '<span class="bulb" style="--c:'+["#ffd970","#e4626f","#7cc7a5","#fff3c4"][i%4]+';--d:'+((i*0.37)%2.6).toFixed(2)+'s"></span>';
+  box.innerHTML = h;
+}
+function startSnow(){
+  if (reduce) return;
+  const c = document.createElement("canvas"); c.id = "snow"; c.setAttribute("aria-hidden","true"); document.body.appendChild(c);
+  const ctx = c.getContext("2d"); let W, H, flakes = [];
+  const color = () => getComputedStyle(document.documentElement).getPropertyValue("--snow").trim() || "rgba(255,255,255,.7)";
+  function size(){ const dpr = devicePixelRatio || 1; W = innerWidth; H = innerHeight; c.width = W*dpr; c.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  size(); addEventListener("resize", size);
+  const N = Math.min(26, Math.round(innerWidth/16));
+  for (let i=0;i<N;i++) flakes.push({x:Math.random()*W, y:Math.random()*H, r:2.2+Math.random()*3, s:.12+Math.random()*.28, w:Math.random()*Math.PI*2});
+  let col = color(), t = 0;
+  (function tick(){
+    if (++t % 120 === 0) col = color();
+    ctx.clearRect(0,0,W,H); ctx.fillStyle = col; ctx.shadowColor = col; ctx.shadowBlur = 6;
+    for (const f of flakes){ f.y += f.s; f.w += .008; f.x += Math.sin(f.w)*.25; if (f.y > H+5){ f.y = -5; f.x = Math.random()*W; }
+      ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,Math.PI*2); ctx.fill(); }
+    requestAnimationFrame(tick);
+  })();
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const txt = b.dataset.copy;
+  const ok = () => { b.textContent = "הועתק"; setTimeout(()=>b.textContent="העתק",1500); };
+  try { navigator.clipboard.writeText(txt).then(ok).catch(()=>selectNum(b)); } catch(err){ selectNum(b); }
+});
+function selectNum(b){ const s = b.parentElement.querySelector(".num"); const r = document.createRange(); r.selectNodeContents(s); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+
+function showPanel(name){
+  document.querySelectorAll("section.panel").forEach(p => { p.hidden = p.id !== "panel-"+name; if (!p.hidden){ p.classList.remove("enter"); void p.offsetWidth; p.classList.add("enter"); } });
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.panel===name));
+  $("#days").parentElement.querySelector(".days").style.display = name==="day" ? "" : "none";
+  window.scrollTo(0,0);
+}
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => showPanel(b.dataset.panel));
+
+$("#status").textContent = statusText();
+renderDays(); renderDay(); renderFood(); renderMove(); renderSOS(); renderInfo(); renderTodo();
+buildLights(); addEventListener("resize", buildLights); startSnow();
+
+let sampleFn = null, askCtl = null, curAsk = null;
+document.body.classList.add("no-sample");
+(async () => {
+  try { sampleFn = window.claude ? await window.claude.use("sample") : null; } catch (e) { sampleFn = null; }
+  document.body.classList.toggle("no-sample", !sampleFn);
+})();
+const CHIPS = [
+  {l:"מסעדות בסביבה", q:t => "מסעדות טובות ולא תיירותיות ליד: " + t + "?"},
+  {l:"מה לא לפספס", q:t => "מה לא לפספס ב: " + t + "?"},
+  {l:"טיפים עם הבנות", q:t => "טיפים לביקור ב: " + t + " עם בנות 12 ו־14?"},
+  {l:"איך מגיעים מהמלון", q:t => "איך מגיעים מהמלון ב־Riemergasse ל: " + t + "?"},
+  {l:"מה עושים אם ירוד גשם", q:t => "מה החלופה ל: " + t + " אם ירוד גשם או שלג כבד?"}
+];
+function buildPrompt(q){
+  const d = DAYS[current];
+  return "אנחנו משפחה מישראל: שני הורים ושתי בנות בנות 12 ו־14, בטיול לכבוד בת המצווה של הבת יעל, בווינה ב־4–9.12.2026, בחנוכה ובעונת שווקי חג המולד. המלון ברובע הראשון, ב־Riemergasse ליד סטפנסדום. הטיול חסכוני, ואנחנו מעדיפים מקומות אותנטיים ולא תיירותיים.\n"
+    + "היום שנצפה באפליקציה: " + d.dow + " " + d.label + ", " + d.title + ". בתוכנית של היום: " + d.slots.map(s => s.h).join("; ") + ".\n"
+    + "השאלה היא על: " + (curAsk ? curAsk.title : "") + ".\n\n" + q + "\n\n"
+    + "ענה בעברית, קצר ומעשי, ברשימת נקודות של עד 8 פריטים, עם שמות מקומות וכתובות. בלי עיצוב Markdown. בסוף שורה אחת שכדאי לבדוק שעות פתיחה עדכניות.\n"
+    + "חשוב: כל בני המשפחה, כולל יעל, קוראים את התשובות. אם השאלה על חגיגה, בת מצווה, מתנות או הפתעות, תן 4–5 רעיונות, משפט או שניים לכל רעיון. מותר להזכיר מקומות וחוויות מוכרים בווינה בשמם, ולומר מה מיוחד בהם. בלי תסריט צעד אחר צעד, בלי מחירים ושעות, ובלי לתכנן הפתעות. נסח כל רעיון ברמז מעורר השראה: תאר את הרגע, האווירה או המקום ומה הם מזמינים, ואל תגיד מה לעשות או מה לומר. למשל: 'שעת השקיעה מראש הגלגל היא רגע קסום לברכה', ולא 'תנו לכל אחד לומר משאלה'. המשפחה תבחר ותעצב בעצמה.";
+}
+const cleanMd = t => t.replace(/\*\*/g, "").replace(/^#+\s*/gm, "").replace(/^\s*[-*]\s+/gm, "• ");
+const askQ = $("#askQ"), askOut = $("#askOut"), askGo = $("#askGo"), askStop = $("#askStop");
+function updateOpenLink(){ $("#askOpen").href = "https://claude.ai/new?q=" + encodeURIComponent(buildPrompt(askQ.value)); }
+function openAsk(i){
+  curAsk = ASKS[i]; if (!curAsk) return;
+  $("#askTitle").textContent = "שאל את Claude: " + curAsk.title;
+  askQ.value = curAsk.q; askOut.textContent = "";
+  $("#askChips").innerHTML = CHIPS.map((c,i) => '<button class="chip'+(c.star?' star':'')+'" type="button" data-c="'+i+'">'+esc(c.l)+'</button>').join("");
+  $("#askChips").querySelectorAll(".chip").forEach(b => b.onclick = () => { askQ.value = CHIPS[+b.dataset.c].q(curAsk.title); updateOpenLink(); });
+  updateOpenLink();
+  $("#askBack").hidden = false; $("#askSheet").hidden = false; askQ.focus();
+}
+function closeAsk(){ if (askCtl) askCtl.abort(); $("#askBack").hidden = true; $("#askSheet").hidden = true; }
+askQ.addEventListener("input", updateOpenLink);
+$("#askClose").onclick = closeAsk; $("#askBack").onclick = closeAsk;
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#askSheet").hidden) closeAsk(); });
+document.addEventListener("click", e => { const b = e.target.closest(".askbtn"); if (b) openAsk(+b.dataset.ask); });
+askStop.onclick = () => { if (askCtl) askCtl.abort(); };
+askGo.onclick = async () => {
+  if (!sampleFn || !askQ.value.trim()) return;
+  askCtl = new AbortController();
+  askOut.textContent = "חושב..."; askGo.disabled = true; askStop.hidden = false;
+  try {
+    const { truncated } = await sampleFn(buildPrompt(askQ.value.trim()), { signal: askCtl.signal, onText: ({ text }) => { askOut.textContent = cleanMd(text); } });
+    if (truncated) askOut.textContent += "\n\n(התשובה נקטעה. אפשר לשאול שאלה ממוקדת יותר.)";
+  } catch (e) {
+    const kept = e && e.text ? cleanMd(e.text) + "\n\n" : "";
+    const code = e && e.code;
+    if (code === "cancelled") askOut.textContent = kept.trim();
+    else if (["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(code)) { sampleFn = null; document.body.classList.add("no-sample"); askOut.textContent = "אי אפשר לשאול כאן. אפשר לפתוח את השאלה בצ׳אט של Claude."; }
+    else if (code === "rate_limited") askOut.textContent = kept + "יותר מדי שאלות ברצף. נסו שוב בעוד כמה דקות.";
+    else if (code === "refused") askOut.textContent = "Claude לא ענה על השאלה הזו. נסו לנסח אחרת.";
+    else if (code === "session_expired") askOut.textContent = "צריך להתחבר מחדש לחשבון Claude.";
+    else askOut.textContent = kept + "משהו השתבש. אפשר לנסות שוב.";
+  } finally { askGo.disabled = false; askStop.hidden = true; askCtl = null; }
+};
+
+function netHTML(){
+  return '<div class="netbox">' + sec("roam", "קודם כל: למנוע חיובי נדידה", "בסים הישראלי", '<div>'
+    + '<p>את זה עושים עוד בארץ, ובודקים שוב במטוס לפני הנחיתה.</p>'
+    + '<b>בטלפון עם ה־eSIM</b><ol class="steps">'
+    + '<li>הגדרות ← חיבורים ← מנהל כרטיסי SIM: לבחור את ה־eSIM ל״נתונים ניידים״.</li>'
+    + '<li>בסים הישראלי: לכבות ״נדידת נתונים״. בסים של ה־eSIM נדידת נתונים צריכה להיות פעילה, אחרת לא יהיה אינטרנט.</li>'
+    + '<li>הכי בטוח: לכבות לגמרי את הסים הישראלי במנהל כרטיסי ה־SIM. מי שצריך לקבל SMS מהבנק, משאיר אותו דלוק ולא עונה לשיחות. שיחות נכנסות בחו״ל בדרך כלל עולות כסף.</li>'
+    + '</ol><b>בשאר הטלפונים</b><ol class="steps">'
+    + '<li>להעביר למצב טיסה עוד לפני הנחיתה, ולהשאיר ככה כל הטיול.</li>'
+    + '<li>להדליק מחדש רק WiFi ובלוטות׳. במצב טיסה הסים לא מתחבר לרשת הזרה, ואין שום חיוב.</li>'
+    + '<li>שיחות והודעות עוברות בווטסאפ.</li></ol>'
+    + '<b>מול חברת הסלולר</b><ol class="steps">'
+    + '<li>לוודא שחסימת הגלישה בחו״ל פעילה בכל המספרים.</li>'
+    + '<li>לשאול אם שיחה שמופנית לתא הקולי בחו״ל עולה כסף, ואם כן לבטל את התא הקולי לימי הטיול.</li></ol>'
+    + '<p class="note">שמות התפריטים משתנים מעט בין יצרנים. בחיפוש של ההגדרות מחפשים ״נדידה״ או ״מנהל SIM״.</p></div>', true)
+    + sec("share", "שיתוף אינטרנט לכל המשפחה", "WiFi ובלוטות׳", '<p>הטלפון עם ה־eSIM משתף אינטרנט עם כל השאר. יש שתי דרכים:</p>'
+    + '<div class="how"><b>WiFi (נקודה חמה), מהיר יותר:</b> בטלפון עם ה־eSIM נכנסים להגדרות ← חיבורים ← נקודה חמה ושיתוף אינטרנט ← נקודה חמה ניידת. בשאר הטלפונים מתחברים מרשימת ה־WiFi, או סורקים את הקוד למטה.</div>'
+    + '<div class="how"><b>בלוטות׳, חוסך סוללה:</b> בטלפון עם ה־eSIM, באותו מסך, מפעילים ״שיתוף אינטרנט באמצעות Bluetooth״. בכל טלפון אחר מצמדים אותו פעם אחת בבלוטות׳, נכנסים להגדרות של המכשיר המצומד ומפעילים ״גישה לאינטרנט״. המהירות נמוכה יותר, אבל מספיקה לווטסאפ, מפות והודעות.</div>', false)
+    + sec("qr", "קוד QR לחיבור WiFi", "לא לבלוטות׳", ''
+    + '<div class="netform"><label for="hsSsid">שם הרשת<input id="hsSsid" autocomplete="off"></label><label for="hsPass">סיסמה<input id="hsPass" autocomplete="off"></label><button class="primary" id="hsMake" type="button">צור קוד להתחברות</button></div>'
+    + '<div id="hsQr"></div>'
+    + '<p class="note">שם הרשת והסיסמה נשמרים רק אצל מי שהקליד אותם, ולא עוברים לשום מקום. מציגים את הקוד, ובטלפון השני סורקים אותו במצלמה או ב־Google Lens. אפשר גם בהגדרות ה־WiFi, בסמל ה־QR שליד ״הוספת רשת״.</p>'
+    , false)
+    + sec("tips", "טיפים", "", '<ul><li>אחרי חיבור ראשון, הטלפונים מתחברים מעצמם בכל פעם שהנקודה החמה פועלת. כדאי לוודא ש״חיבור אוטומטי״ מופעל בהגדרות הרשת.</li>'
+    + '<li>שמות התפריטים משתנים מעט בין יצרנים. אם לא מוצאים, מחפשים ״נקודה חמה״ בחיפוש של ההגדרות.</li>'
+    + '<li>השיתוף עובד רק כשנמצאים קרוב לטלפון עם ה־eSIM, ונקודה חמה מרוקנת סוללה מהר. כדאי לקחת סוללה ניידת.</li>'
+    + '<li>כדי לחסוך בגלישה: סרטונים, עדכוני אפליקציות וגיבוי תמונות רק ב־WiFi של המלון.</li>'
+    + '<li>בדיקת חיבור: הכפתור ״אינטרנט״ בסרגל התחתון ירוק כשהאינטרנט עובד ואדום כשלא, ונבדק כל 30 שניות, ו״אין אינטרנט״ באדום כשאין.</li></ul>', false) + '</div>';
+}
+const hsEsc = s => String(s).replace(/([\\;,:"])/g, "\\$1");
+function drawQr(ssid, pass){
+  const box = $("#hsQr"); if (!box) return;
+  if (!ssid) { box.textContent = ""; return; }
+  if (typeof qrcode === "undefined") { box.textContent = "לא הצלחתי ליצור קוד. אפשר להתחבר ידנית עם שם הרשת והסיסמה."; return; }
+  const q = qrcode(0, "M");
+  q.addData("WIFI:T:" + (pass ? "WPA" : "nopass") + ";S:" + hsEsc(ssid) + ";" + (pass ? "P:" + hsEsc(pass) + ";" : "") + ";");
+  q.make();
+  box.innerHTML = q.createSvgTag(6, 2);
+}
+function initNet(){
+  $("#netPanel").innerHTML = netHTML();
+  const saved = store.get("vienna-hotspot") || {};
+  const s = $("#hsSsid"), p = $("#hsPass");
+  if (!s) return;
+  s.value = saved.ssid || ""; p.value = saved.pass || "";
+  drawQr(saved.ssid, saved.pass);
+  $("#hsMake").onclick = () => { const v = {ssid: s.value.trim(), pass: p.value}; store.set("vienna-hotspot", v); drawQr(v.ssid, v.pass); };
+}
+function netVia(){
+  const c = navigator.connection; const t = c && c.type;
+  return ({wifi:"דרך WiFi או נקודה חמה", cellular:"דרך הסים של הטלפון הזה", bluetooth:"דרך בלוטות׳", ethernet:"דרך כבל"})[t] || "";
+}
+function showNet(on){
+  const tab = document.querySelector('nav.tabs button[data-panel="net"]');
+  const cell = on && navigator.connection && navigator.connection.type === "cellular";
+  if (tab) { tab.classList.toggle("netOn", on && !cell); tab.classList.toggle("netWarn", !!cell); tab.classList.toggle("netOff", !on); }
+  const st = $("#netState"); if (!st) return;
+  const via = netVia();
+  st.className = "netstate " + (!on ? "off" : cell ? "warn" : "on");
+  st.textContent = !on ? "● אין אינטרנט בטלפון הזה"
+    : cell ? "● מחוברים דרך הסים של הטלפון הזה. זה תקין רק בטלפון עם ה־eSIM. בכל טלפון אחר זה עלול לעלות כסף: לעבור למצב טיסה ולהתחבר לנקודה החמה."
+    : ("● יש אינטרנט" + (via ? " · מחוברים " + via : ""));
+}
+let netBusy = false;
+async function updNet(){
+  if (navigator.onLine === false) { showNet(false); return; }
+  if (netBusy) return; netBusy = true;
+  const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 6000);
+  try {
+    const base = location.pathname.endsWith("/") ? location.pathname : location.pathname.replace(/[^/]*$/, "");
+    const r = await fetch(base + "index.html?ping=" + Date.now(), { method: "HEAD", cache: "no-store", signal: ctl.signal });
+    showNet(r.ok || r.status < 500);
+  } catch (e) { showNet(false); }
+  finally { clearTimeout(tm); netBusy = false; }
+}
+addEventListener("online", updNet); addEventListener("offline", updNet);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) updNet(); });
+setInterval(() => { if (!document.hidden) updNet(); }, 30000);
+if (navigator.connection && navigator.connection.addEventListener) navigator.connection.addEventListener("change", updNet);
+updNet(); initNet();
+
+/* Sync between the owner's own devices: todo ticks, open sections, hotspot details */
+const SYNC_KEYS = {"vienna-todo-v2":"todo", "vienna-sec":"sec", "vienna-hotspot":"hotspot"};
+let cloudRef = null, cloudChain = Promise.resolve(), cloudTimer = null;
+const cloudState = {};
+const localGet = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
+const localSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+store.set = function(k, v){ localSet(k, v); const f = SYNC_KEYS[k]; if (f) { cloudState[f] = v; queueCloud(); } };
+function queueCloud(){
+  if (!cloudRef) return;
+  clearTimeout(cloudTimer);
+  cloudTimer = setTimeout(() => {
+    const body = JSON.parse(JSON.stringify(cloudState)); body.updated = Date.now();
+    cloudChain = cloudChain.then(() => cloudRef.set(body)).catch(() => {});
+  }, 700);
+}
+function setSyncNote(on){
+  const n = $("#panel-todo .note"); if (n) n.textContent = on ? "הסימונים מסונכרנים בין כל המכשירים שלך שמחוברים לאותו חשבון Claude." : "הסימונים נשמרים רק בדפדפן הזה.";
+}
+function applyRemote(d){
+  if (d.todo && typeof d.todo === "object") { done = Object.assign({}, d.todo); localSet("vienna-todo-v2", done); cloudState.todo = done; renderTodo(); }
+  if (d.sec && typeof d.sec === "object") { Object.keys(secState).forEach(k => delete secState[k]); Object.assign(secState, d.sec); localSet("vienna-sec", secState); cloudState.sec = secState; renderInfo(); }
+  if (d.hotspot && typeof d.hotspot === "object") {
+    localSet("vienna-hotspot", d.hotspot); cloudState.hotspot = d.hotspot;
+    const s = $("#hsSsid"), p = $("#hsPass");
+    if (s && p && document.activeElement !== s && document.activeElement !== p) { s.value = d.hotspot.ssid || ""; p.value = d.hotspot.pass || ""; drawQr(d.hotspot.ssid, d.hotspot.pass); }
+  }
+}
+(async () => {
+  try {
+    if (!window.claude) return;
+    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!db || !user) return;
+    const uid = await user.id();
+    if (!uid) return;
+    const ref = db.doc("data/users/" + uid + "/state");
+    let first = true;
+    ref.onSnapshot(snap => {
+      if (snap.metadata.hasPendingWrites) return;
+      if (first && !snap.metadata.fromCache) {
+        first = false; cloudRef = ref; setSyncNote(true);
+        if (!snap.exists) {
+          cloudState.todo = localGet("vienna-todo-v2") || {}; cloudState.sec = localGet("vienna-sec") || secState; cloudState.hotspot = localGet("vienna-hotspot") || {};
+          queueCloud(); return;
+        }
+      }
+      if (snap.exists) { cloudRef = ref; applyRemote(snap.data() || {}); }
+    }, () => { setSyncNote(false); });
+  } catch (e) { /* stay local-only */ }
+})();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").then(reg => {
+      reg.addEventListener("updatefound", () => {
+        const w = reg.installing;
+        w && w.addEventListener("statechange", () => {
+          if (w.state === "installed" && navigator.serviceWorker.controller) {
+            const b = document.createElement("button");
+            b.className = "primary"; b.textContent = "יש עדכון לאפליקציה. לחצו לרענון";
+            b.style.cssText = "position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;transform:translateX(-50%);z-index:40";
+            b.onclick = () => location.reload();
+            document.body.appendChild(b);
+          }
+        });
+      });
+    }).catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
