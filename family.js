@@ -50,7 +50,8 @@ function joinForm(where){
     + '<div class="netform"><label>השם שלי<input class="jName" autocomplete="nickname" maxlength="40" style="direction:rtl;text-align:right"></label>'
     + '<label>קוד משפחתי<input class="jCode" autocomplete="off"></label>'
     + '<button class="primary jGo" type="button">כניסה</button></div><p class="note jMsg" style="margin-top:4px"></p>';
-  where.insertAdjacentElement("afterend", box);
+  if (where.id === "joinOvCard") { box.className = "joinbox"; box.querySelector("h3").remove(); box.querySelector("p").remove(); where.appendChild(box); }
+  else where.insertAdjacentElement("afterend", box);
   box.querySelector(".jGo").onclick = async () => {
     const name = box.querySelector(".jName").value.trim(), code = box.querySelector(".jCode").value.trim();
     const m = box.querySelector(".jMsg");
@@ -59,16 +60,35 @@ function joinForm(where){
     try {
       await setDoc(doc(db, "members", uid), { name, code, ts: Date.now() });
       document.querySelectorAll(".joinbox").forEach(b => b.remove());
+      const ov = $("#joinOv"); if (ov) ov.remove();
       start();
     } catch (e) {
       m.textContent = /permission/i.test(String(e && e.code)) ? "הקוד לא נכון." : "לא הצלחתי להיכנס. בדקו את החיבור לאינטרנט.";
     }
   };
 }
+// Welcome screen on first open: name + family code, so chat, photos and the QR work right away.
+function joinOverlay(){
+  if ($("#joinOv")) return;
+  const ov = document.createElement("div");
+  ov.id = "joinOv"; ov.setAttribute("dir", "rtl"); ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true");
+  ov.style.cssText = "position:fixed;inset:0;z-index:60;background:rgba(10,30,22,.6);display:flex;align-items:center;justify-content:center;padding:16px";
+  ov.innerHTML = '<div id="joinOvCard" class="card" style="width:100%;max-width:420px;margin:0;border:2px solid var(--gold);padding:18px 16px">'
+    + '<h3 style="font-size:1.4rem;color:var(--pine);margin-bottom:4px">ברוכים הבאים לטיול!</h3>'
+    + '<p>פעם אחת בטלפון הזה: השם שלכם והקוד המשפחתי. אחר כך הצ׳אט, התמונות וקוד ה־QR של האינטרנט פתוחים לכם.</p></div>';
+  document.body.appendChild(ov);
+  joinForm($("#joinOvCard"));
+  const later = document.createElement("button");
+  later.type = "button"; later.className = "copy"; later.textContent = "אחר כך"; later.style.marginTop = "8px";
+  later.onclick = () => ov.remove();
+  $("#joinOvCard").appendChild(later);
+  setTimeout(() => { const n = ov.querySelector(".jName"); if (n) n.focus(); }, 100);
+}
 function showJoin(){
   lockUI("");
   joinForm($("#phMsg"));
   joinForm($("#chMsg"));
+  joinOverlay();
 }
 
 /* ---------- photos ---------- */
